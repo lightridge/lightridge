@@ -1,1 +1,444 @@
-build/html/samples.html
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>LightRidge Sample &mdash; LightRidge 0.1.5 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="LightRidge Case-studies" href="tutorials.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> LightRidge
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">LightRidge Sample</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#d2nns-setups-definition-visible-range-laser-input">D2NNs setups definition (visible range laser input)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#d2nns-setups-training">D2NNs setups training</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#loading-lightridge-package">Loading LightRidge Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#visualize-post-training-phase-parameters-weights-of-d2nns-using-lightridge">Visualize Post-training Phase Parameters (weights of D2NNs) using LightRidge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#visualize-inference-forward-of-d2nns-using-lightridge">Visualize Inference (Forward) of D2NNs using LightRidge</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">LightRidge Case-studies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html">LightRidge Authors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pythonapi.html">Python API</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LightRidge</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>LightRidge Sample</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/samples.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="lightridge-sample">
+<h1>LightRidge Sample<a class="headerlink" href="#lightridge-sample" title="Permalink to this headline">¶</a></h1>
+<p>Tutorial Authors: Yingjie Li, Cunxi Yu (University of Utah)</p>
+<p>Recently, there are increasing efforts on optical neural networks and
+optical computing based DNNs hardware, which bring significant
+advantages for machine learning systems in terms of their power
+efficiency, parallelism and computational speed. Among them, free-space
+diffractive deep neural networks (D2NNs) , which is based on the light
+diffraction, feature millions of neurons in each layer interconnected
+with neurons in neighboring layers. This ultrahigh density and
+parallelism make this system possess fast and high throughput computing
+capability.</p>
+<p>In this tutorial, we demonstrate that our LightRidge framework can be
+used to effectively implement and train D2NNs.</p>
+<p><em>[1] Lin, Xing, Yair Rivenson, Nezih T. Yardimci, Muhammed Veli, Yi Luo,
+Mona Jarrahi, and Aydogan Ozcan. “All-optical machine learning using
+diffractive deep neural networks.” Science 361, no. 6406 (2018):
+1004-1008.</em></p>
+<p><em>[2] Li, Yingjie, Ruiyang Chen, Berardi Sensale-Rodriguez, Weilu Gao,
+and Cunxi Yu. “Real-time multi-task diffractive deep neural networks via
+hardware-software co-design.” Scientific reports 11, no. 1 (2021): 1-9.</em></p>
+<hr class="docutils" />
+<div class="section" id="d2nns-setups-definition-visible-range-laser-input">
+<h2>D2NNs setups definition (visible range laser input)<a class="headerlink" href="#d2nns-setups-definition-visible-range-laser-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">wavelength</span> <span class="o">=</span> laser wavelenght <span class="o">(</span>unit: meter<span class="o">)</span>
+<span class="nv">pixel_size</span> <span class="o">=</span> pixel size of phase mask <span class="o">(</span>unit: meter<span class="o">)</span>
+<span class="nv">distance</span> <span class="o">=</span> diffraction distance <span class="o">(</span>unit: meter<span class="o">)</span>
+<span class="nv">depth</span> <span class="o">=</span> number of layers <span class="o">(</span>default: <span class="m">5</span> layers <span class="o">[</span><span class="m">1</span><span class="o">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="d2nns-setups-training">
+<h2>D2NNs setups training<a class="headerlink" href="#d2nns-setups-training" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">batch_size</span> <span class="o">=</span> batch size <span class="o">(</span><span class="m">500</span><span class="o">)</span>
+<span class="nv">lr</span> <span class="o">=</span> learning rate <span class="o">(</span><span class="m">0</span>.1<span class="o">)</span>
+<span class="nv">epochs</span> <span class="o">=</span> number of training iterations <span class="o">(</span><span class="m">5</span><span class="o">)</span>
+<span class="nv">amp_factor</span> <span class="o">=</span> regularization factor <span class="o">(</span><span class="m">2</span><span class="o">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Example: 5-Layer D2NN system proposed in [1] (Figure is from [1] Fig. 1)</p>
+<img alt="_images/sci18.jpg" src="_images/sci18.jpg" />
+<hr class="docutils" />
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wavelength</span> <span class="o">=</span> <span class="mf">5.32e-7</span>
+<span class="n">pixel_size</span> <span class="o">=</span> <span class="mf">0.000036</span>
+<span class="n">sys_size</span><span class="o">=</span><span class="mi">200</span>
+<span class="n">distance</span><span class="o">=</span><span class="mf">0.25</span>
+<span class="n">pad</span><span class="o">=</span><span class="mi">50</span>
+<span class="n">depth</span><span class="o">=</span><span class="mi">5</span>
+<span class="n">amp_factor</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">batch_size</span><span class="o">=</span><span class="mi">500</span>
+<span class="n">lr</span><span class="o">=</span><span class="mf">0.1</span>
+<span class="n">epochs</span><span class="o">=</span><span class="mi">10</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span><span class="nn">csv</span><span class="o">,</span><span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="kn">import</span> <span class="nn">pathlib</span><span class="o">,</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">torch</span><span class="o">,</span> <span class="nn">torchvision</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+<span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">transforms</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="loading-lightridge-package">
+<h2>Loading LightRidge Package<a class="headerlink" href="#loading-lightridge-package" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lightbridge.data</span> <span class="k">as</span> <span class="nn">dataset</span>
+<span class="kn">import</span> <span class="nn">lightbridge.layers</span> <span class="k">as</span> <span class="nn">layers</span>
+<span class="kn">import</span> <span class="nn">lightbridge.utils</span> <span class="k">as</span> <span class="nn">utils</span>
+<span class="kn">import</span> <span class="nn">lightbridge.models</span> <span class="k">as</span> <span class="nn">models</span>
+<span class="n">device</span><span class="o">=</span><span class="s2">&quot;cuda:0&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;training and testing on MNIST10 dataset&quot;</span><span class="p">)</span>
+<span class="n">load_dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="n">batch_size</span> <span class="o">=</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">system_size</span> <span class="o">=</span> <span class="n">sys_size</span><span class="p">,</span> <span class="n">datapath</span> <span class="o">=</span> <span class="s2">&quot;./data&quot;</span><span class="p">)</span>
+<span class="n">train_dataloader</span><span class="p">,</span> <span class="n">val_dataloader</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="o">.</span><span class="n">MNIST</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>lightridge.layers API supports three different forward functions that
+can be selected for users, based on the optical systems they have.
+Functions included 1) Fresnel 2) Sommerfeld 3) Fraunhofer
+approximations. Our pre-implemented is implemented using
+lightridge.layers API.</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DiffractiveClassifier_Raw</span><span class="p">(</span><span class="n">wavelength</span><span class="o">=</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">pixel_size</span><span class="o">=</span><span class="n">pixel_size</span><span class="p">,</span>
+                                         <span class="n">sys_size</span><span class="o">=</span><span class="n">sys_size</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="n">distance</span><span class="p">,</span> <span class="n">pad</span> <span class="o">=</span> <span class="n">pad</span><span class="p">,</span>
+                                         <span class="n">num_layers</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span> <span class="n">amp_factor</span><span class="o">=</span><span class="n">amp_factor</span><span class="p">,</span><span class="n">Fresnel</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Network</span> <span class="ow">is</span> <span class="n">constructed</span> <span class="n">using</span> <span class="n">Fresnel</span> <span class="n">approximation</span>
+<span class="n">Network</span> <span class="ow">is</span> <span class="n">constructed</span> <span class="n">using</span> <span class="n">Fresnel</span> <span class="n">approximation</span>
+<span class="n">Network</span> <span class="ow">is</span> <span class="n">constructed</span> <span class="n">using</span> <span class="n">Fresnel</span> <span class="n">approximation</span>
+<span class="n">Network</span> <span class="ow">is</span> <span class="n">constructed</span> <span class="n">using</span> <span class="n">Fresnel</span> <span class="n">approximation</span>
+<span class="n">Network</span> <span class="ow">is</span> <span class="n">constructed</span> <span class="n">using</span> <span class="n">Fresnel</span> <span class="n">approximation</span>
+<span class="n">Network</span> <span class="ow">is</span> <span class="n">constructed</span> <span class="n">using</span> <span class="n">Fresnel</span> <span class="n">approximation</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">train_dataloader</span><span class="p">,</span> <span class="n">val_dataloader</span><span class="p">):</span>
+    <span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;training starts.&#39;</span><span class="p">)</span>
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">)</span>
+    <span class="n">scheduler</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">lr_scheduler</span><span class="o">.</span><span class="n">StepLR</span><span class="p">(</span><span class="n">optimizer</span><span class="p">,</span><span class="n">step_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+        <span class="n">log</span> <span class="o">=</span> <span class="p">[</span><span class="n">epoch</span><span class="p">]</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+        <span class="n">train_len</span><span class="p">,</span> <span class="n">train_running_counter</span><span class="p">,</span> <span class="n">train_running_loss</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span>
+        <span class="n">tk0</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">105</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">)))</span>
+        <span class="k">for</span> <span class="n">train_iter</span><span class="p">,</span> <span class="n">train_data_batch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tk0</span><span class="p">):</span>
+            <span class="n">train_images</span><span class="p">,</span> <span class="n">train_labels</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">data_to_cplex</span><span class="p">(</span><span class="n">train_data_batch</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+            <span class="n">train_outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">train_images</span><span class="p">)</span>
+            <span class="n">train_loss_</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">train_outputs</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">)</span>
+            <span class="n">train_counter_</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">train_labels</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">train_outputs</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+            <span class="n">train_loss_</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">retain_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+            <span class="n">train_len</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_labels</span><span class="p">)</span>
+            <span class="n">train_running_loss</span> <span class="o">+=</span> <span class="n">train_loss_</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            <span class="n">train_running_counter</span> <span class="o">+=</span> <span class="n">train_counter_</span>
+
+            <span class="n">train_loss</span> <span class="o">=</span> <span class="n">train_running_loss</span> <span class="o">/</span> <span class="n">train_len</span>
+            <span class="n">train_accuracy</span> <span class="o">=</span> <span class="n">train_running_counter</span> <span class="o">/</span> <span class="n">train_len</span>
+
+            <span class="n">tk0</span><span class="o">.</span><span class="n">set_description_str</span><span class="p">(</span><span class="s1">&#39;Epoch </span><span class="si">{}</span><span class="s1">/</span><span class="si">{}</span><span class="s1"> : Training&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">epochs</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+            <span class="n">tk0</span><span class="o">.</span><span class="n">set_postfix</span><span class="p">({</span><span class="s1">&#39;Train_Loss&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">train_loss</span><span class="p">),</span> <span class="s1">&#39;Train_Accuracy&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.5f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">train_accuracy</span><span class="p">)})</span>
+        <span class="n">scheduler</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_loss</span><span class="p">)</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_accuracy</span><span class="p">)</span>
+
+        <span class="n">val_loss</span><span class="p">,</span> <span class="n">val_accuracy</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">val_dataloader</span><span class="p">)</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val_loss</span><span class="p">)</span>
+        <span class="n">log</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val_accuracy</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">train_loss</span><span class="p">,</span> <span class="n">train_accuracy</span><span class="p">,</span> <span class="n">val_loss</span><span class="p">,</span> <span class="n">val_accuracy</span><span class="p">,</span> <span class="n">log</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">eval</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">val_dataloader</span><span class="p">):</span>
+    <span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+        <span class="n">val_len</span><span class="p">,</span><span class="n">val_running_counter</span><span class="p">,</span><span class="n">val_running_loss</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span>
+        <span class="n">tk1</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">val_dataloader</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">105</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">val_dataloader</span><span class="p">)))</span>
+        <span class="k">for</span> <span class="n">val_iter</span><span class="p">,</span> <span class="n">val_data_batch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tk1</span><span class="p">):</span>
+            <span class="n">val_images</span><span class="p">,</span> <span class="n">val_labels</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">data_to_cplex</span><span class="p">(</span><span class="n">val_data_batch</span><span class="p">,</span><span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+            <span class="n">val_outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">val_images</span><span class="p">)</span>
+
+            <span class="n">val_loss_</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">val_outputs</span><span class="p">,</span> <span class="n">val_labels</span><span class="p">)</span>
+            <span class="n">val_counter_</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val_labels</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val_outputs</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+            <span class="n">val_len</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">val_labels</span><span class="p">)</span>
+            <span class="n">val_running_loss</span> <span class="o">+=</span> <span class="n">val_loss_</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            <span class="n">val_running_counter</span> <span class="o">+=</span> <span class="n">val_counter_</span>
+
+            <span class="n">val_loss</span> <span class="o">=</span> <span class="n">val_running_loss</span> <span class="o">/</span> <span class="n">val_len</span>
+            <span class="n">val_accuracy</span> <span class="o">=</span> <span class="n">val_running_counter</span> <span class="o">/</span> <span class="n">val_len</span>
+
+            <span class="n">tk1</span><span class="o">.</span><span class="n">set_description_str</span><span class="p">(</span><span class="s1">&#39;Validating&#39;</span><span class="p">)</span>
+            <span class="n">tk1</span><span class="o">.</span><span class="n">set_postfix</span><span class="p">({</span><span class="s1">&#39;Val_Loss&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.5f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">val_loss</span><span class="p">),</span> <span class="s1">&#39;Val_Accuarcy&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.5f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">val_accuracy</span><span class="p">)})</span>
+    <span class="k">return</span> <span class="n">val_loss</span><span class="p">,</span> <span class="n">val_accuracy</span>
+</pre></div>
+</div>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">train_dataloader</span><span class="p">,</span> <span class="n">val_dataloader</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Epoch 0/9 : Training: 100%|███| 120/120 [00:20&lt;00:00,  5.73it/s, Train_Loss=0.28, Train_Accuracy=0.81483]
+Validating: 100%|████████████████| 20/20 [00:02&lt;00:00,  6.80it/s, Val_Loss=0.07260, Val_Accuarcy=0.95500]
+Epoch 1/9 : Training: 100%|███| 120/120 [00:19&lt;00:00,  6.14it/s, Train_Loss=0.07, Train_Accuracy=0.95938]
+Validating: 100%|████████████████| 20/20 [00:02&lt;00:00,  7.02it/s, Val_Loss=0.06925, Val_Accuarcy=0.95810]
+Epoch 2/9 : Training: 100%|███| 120/120 [00:19&lt;00:00,  6.17it/s, Train_Loss=0.06, Train_Accuracy=0.96353]
+Validating: 100%|████████████████| 20/20 [00:02&lt;00:00,  7.08it/s, Val_Loss=0.07265, Val_Accuarcy=0.95620]
+Epoch 3/9 : Training: 100%|███| 120/120 [00:20&lt;00:00,  5.84it/s, Train_Loss=0.06, Train_Accuracy=0.96713]
+Validating: 100%|████████████████| 20/20 [00:03&lt;00:00,  6.56it/s, Val_Loss=0.05647, Val_Accuarcy=0.96570]
+Epoch 4/9 : Training: 100%|███| 120/120 [00:19&lt;00:00,  6.08it/s, Train_Loss=0.05, Train_Accuracy=0.96923]
+Validating: 100%|████████████████| 20/20 [00:02&lt;00:00,  6.76it/s, Val_Loss=0.05655, Val_Accuarcy=0.96700]
+Epoch 5/9 : Training: 100%|███| 120/120 [00:19&lt;00:00,  6.09it/s, Train_Loss=0.06, Train_Accuracy=0.96818]
+Validating: 100%|████████████████| 20/20 [00:03&lt;00:00,  6.61it/s, Val_Loss=0.05789, Val_Accuarcy=0.96570]
+Epoch 6/9 : Training: 100%|███| 120/120 [00:19&lt;00:00,  6.22it/s, Train_Loss=0.05, Train_Accuracy=0.96978]
+Validating: 100%|████████████████| 20/20 [00:02&lt;00:00,  6.98it/s, Val_Loss=0.05078, Val_Accuarcy=0.96910]
+Epoch 7/9 : Training: 100%|███| 120/120 [00:19&lt;00:00,  6.13it/s, Train_Loss=0.05, Train_Accuracy=0.96920]
+Validating: 100%|████████████████| 20/20 [00:02&lt;00:00,  7.33it/s, Val_Loss=0.05996, Val_Accuarcy=0.96410]
+Epoch 8/9 : Training: 100%|███| 120/120 [00:19&lt;00:00,  6.05it/s, Train_Loss=0.06, Train_Accuracy=0.96725]
+Validating: 100%|████████████████| 20/20 [00:03&lt;00:00,  6.66it/s, Val_Loss=0.05767, Val_Accuarcy=0.96500]
+Epoch 9/9 : Training: 100%|███| 120/120 [00:19&lt;00:00,  6.06it/s, Train_Loss=0.05, Train_Accuracy=0.96865]
+Validating: 100%|████████████████| 20/20 [00:02&lt;00:00,  7.03it/s, Val_Loss=0.05653, Val_Accuarcy=0.96530]
+</pre></div>
+</div>
+</div>
+<div class="section" id="visualize-post-training-phase-parameters-weights-of-d2nns-using-lightridge">
+<h2>Visualize Post-training Phase Parameters (weights of D2NNs) using LightRidge<a class="headerlink" href="#visualize-post-training-phase-parameters-weights-of-d2nns-using-lightridge" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">phase_view</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/tutorial_01_d2nn_training_13_0.png" src="_images/tutorial_01_d2nn_training_13_0.png" />
+</div>
+<div class="section" id="visualize-inference-forward-of-d2nns-using-lightridge">
+<h2>Visualize Inference (Forward) of D2NNs using LightRidge<a class="headerlink" href="#visualize-inference-forward-of-d2nns-using-lightridge" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">load_dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">system_size</span> <span class="o">=</span> <span class="n">sys_size</span><span class="p">,</span> <span class="n">datapath</span> <span class="o">=</span> <span class="s2">&quot;./data&quot;</span><span class="p">)</span>
+<span class="n">train_dataloader</span><span class="p">,</span> <span class="n">val_dataloader</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="o">.</span><span class="n">MNIST</span><span class="p">()</span>
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+    <span class="n">tk1</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">val_dataloader</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">105</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">val_dataloader</span><span class="p">)))</span>
+    <span class="k">for</span> <span class="n">val_iter</span><span class="p">,</span> <span class="n">val_data_batch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tk1</span><span class="p">):</span>
+        <span class="n">val_images</span><span class="p">,</span> <span class="n">val_labels</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">data_to_cplex</span><span class="p">(</span><span class="n">val_data_batch</span><span class="p">,</span><span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">val_outputs</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">prop_view</span><span class="p">(</span><span class="n">val_images</span><span class="p">)</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+<img alt="_images/tutorial_01_d2nn_training_15_3.png" src="_images/tutorial_01_d2nn_training_15_3.png" />
+<img alt="_images/tutorial_01_d2nn_training_15_4.png" src="_images/tutorial_01_d2nn_training_15_4.png" />
+<img alt="_images/tutorial_01_d2nn_training_15_5.png" src="_images/tutorial_01_d2nn_training_15_5.png" />
+<img alt="_images/tutorial_01_d2nn_training_15_6.png" src="_images/tutorial_01_d2nn_training_15_6.png" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="tutorials.html" class="btn btn-neutral float-right" title="LightRidge Case-studies" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Tutorial 03: Quantization-aware Device-to-System Co-design &mdash; LightRidge 0.1.5 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="LightRidge Authors" href="../authors.html" />
+    <link rel="prev" title="Tutorial 02: Material Reflection-aware D2NNs Co-Design" href="tutorial_02.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> LightRidge
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.5
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples.html">LightRidge Sample</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorials.html">LightRidge Case-studies</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="tutorial_01_d2nn_training.html">Tutorial 01: Training Diffractive Neural Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_02.html">Tutorial 02: Material Reflection-aware D2NNs Co-Design</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tutorial 03: Quantization-aware Device-to-System Co-design</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#device-to-system-co-design-using-spatial-light-modulator-visible">Device-to-System Co-design using Spatial Light Modulator (Visible)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../authors.html">LightRidge Authors</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pythonapi.html">Python API</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LightRidge</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../tutorials.html">LightRidge Case-studies</a> &raquo;</li>
+        
+      <li>Tutorial 03: Quantization-aware Device-to-System Co-design</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/tutorials/tutorial_03.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="toctree-wrapper compound">
+</div>
+<div class="section" id="tutorial-03-quantization-aware-device-to-system-co-design">
+<h1>Tutorial 03: Quantization-aware Device-to-System Co-design<a class="headerlink" href="#tutorial-03-quantization-aware-device-to-system-co-design" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="device-to-system-co-design-using-spatial-light-modulator-visible">
+<h2>Device-to-System Co-design using Spatial Light Modulator (Visible)<a class="headerlink" href="#device-to-system-co-design-using-spatial-light-modulator-visible" title="Permalink to this headline">¶</a></h2>
+<p><strong>Author</strong>: Yingjie Li (<a class="reference external" href="mailto:lyj1201&#37;&#52;&#48;github">lyj1201<span>&#64;</span>github</a>)</p>
+<p>In this case study, we will show the potential of our system to make hardware-software codesign. To make the system more practical to setup, we need to consider the information of hardware used in the system in simulation, i.e., <strong>hardware-software codesign</strong>. In our system, we will have laser source, diffractive layers (with phase modulation) and detectors. For laser source, there can be different modes; for diffractive layers, it can have different optical properties due to its materials and fabrication; for detectors, it can have different noise levels. We will make our simulation see these limitations from hardware to get better guidance for our experiments.</p>
+<p>For the first thing, we consider the limitations from diffractive layers. The <strong>Spatial Light Modulator (SLM)</strong>. The SLM is an array of liquid crystals, each liquid crystal is a pixel, and acts as a phase modulator in our system. By applying different voltage levels (0 to 255) to each pixel in the SLM array, the free-space light going through the pixel will be phase-modulated accordingly. Moreover, the intensity of the light after going through the pixel can be different with the change of the applied voltage. Thus, the function of voltage vs phase and voltage vs intensity should be included in our simulation. The SLM we used in our experiments is shown below.</p>
+<p>We first setup the system to test the function of SLM with laser source, SLM and detector. With the rough information from the handbook of SLM, we set the system with specific input polarization and output polarization and test the output after applying the voltage of 256 levels. The results are shown below.</p>
+<a class="reference internal image-reference" href="../_images/slm_vol_amp.png"><img alt="image for slm vs mp" src="../_images/slm_vol_amp.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../_images/slm_vol_phase.png"><img alt="image for slm vs phase" src="../_images/slm_vol_phase.png" style="width: 600px;" /></a>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torchvision</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+<span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">transforms</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">lightbridge.utils</span> <span class="k">as</span> <span class="nn">utils</span>
+<span class="kn">import</span> <span class="nn">lightbridge.layers</span> <span class="k">as</span> <span class="nn">layers</span>
+
+<span class="k">class</span> <span class="nc">NetCodesign</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phase_func</span><span class="p">,</span> <span class="n">intensity_func</span><span class="p">,</span> <span class="n">batch_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sys_size</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">num_layers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">amp_factor</span><span class="o">=</span><span class="mi">6</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">NetCodesign</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">amp_factor</span> <span class="o">=</span> <span class="n">amp_factor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">sys_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">distance</span> <span class="o">=</span> <span class="n">distance</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">phase_func</span> <span class="o">=</span> <span class="n">phase_func</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">intensity_func</span> <span class="o">=</span> <span class="n">intensity_func</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+        <span class="c1"># layers.DiffractiveLayer utilizes **Gumble-Softmax** to directly train D2NNs w.r.t hardware specification, where</span>
+        <span class="c1"># the HW-specs are differentiable functions</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">diffractive_layers</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">([</span><span class="n">layers</span><span class="o">.</span><span class="n">DiffractiveLayer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">phase_func</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">intensity_func</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span>
+                                <span class="n">distance</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">distance</span><span class="p">,</span> <span class="n">amplitude_factor</span> <span class="o">=</span> <span class="n">amp_factor</span><span class="p">,</span> <span class="n">phase_mod</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_layers</span><span class="p">)])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_diffraction</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">DiffractiveLayer</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">distance</span><span class="p">,</span> <span class="n">phase_mod</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="c1"># 200 by 200 system siz det designe</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">detector</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Detector</span><span class="p">(</span><span class="n">start_x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">46</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">46</span><span class="p">],</span> <span class="n">start_y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">46</span><span class="p">,</span><span class="mi">46</span><span class="p">,</span><span class="mi">46</span><span class="p">],</span> <span class="n">det_size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+                                        <span class="n">gap_x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">19</span><span class="p">,</span><span class="mi">20</span><span class="p">],</span> <span class="n">gap_y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">27</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">27</span><span class="p">])</span>
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">diffractive_layers</span><span class="p">):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_diffraction</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">detector</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+<p>Then, the training code is shown as below. The default optimizer is <strong>Adam</strong> implemented in Pytorch and we use <strong>MSE</strong> as the loss function. At the end of each epoch, we will have the evaluation code with validation dataet to evaluate the model.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">train_dataloader</span><span class="p">,</span> <span class="n">val_dataloader</span><span class="p">,</span><span class="n">input_padding</span><span class="p">,</span> <span class="n">lambda1</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+ <span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+ <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;training starts.&#39;</span><span class="p">)</span>
+ <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">args</span><span class="o">.</span><span class="n">lr</span><span class="p">)</span>
+ <span class="n">scheduler</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">lr_scheduler</span><span class="o">.</span><span class="n">StepLR</span><span class="p">(</span><span class="n">optimizer</span><span class="p">,</span><span class="n">step_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+ <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">start_epoch</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">start_epoch</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">epochs</span><span class="p">):</span>
+     <span class="n">log</span> <span class="o">=</span> <span class="p">[</span><span class="n">epoch</span><span class="p">]</span>
+     <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+     <span class="n">train_len</span> <span class="o">=</span> <span class="mf">0.0</span>
+     <span class="n">train_running_counter</span> <span class="o">=</span> <span class="mf">0.0</span>
+     <span class="n">train_running_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+     <span class="n">tk0</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">)))</span>
+     <span class="k">for</span> <span class="n">train_iter</span><span class="p">,</span> <span class="n">train_data_batch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tk0</span><span class="p">):</span>
+         <span class="n">train_images</span><span class="p">,</span> <span class="n">train_labels</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">data_to_cplex</span><span class="p">(</span><span class="n">train_data_batch</span><span class="p">)</span>
+         <span class="n">train_outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">train_images</span><span class="p">)</span>
+         <span class="n">train_loss_</span> <span class="o">=</span> <span class="n">lambda1</span> <span class="o">*</span> <span class="n">criterion</span><span class="p">(</span><span class="n">train_outputs</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">)</span>
+         <span class="n">train_counter_</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">train_labels</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">train_outputs</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+         <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+         <span class="n">train_loss_</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">retain_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+         <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+         <span class="n">train_len</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_labels</span><span class="p">)</span>
+         <span class="n">train_running_loss</span> <span class="o">+=</span> <span class="n">train_loss_</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+         <span class="n">train_running_counter</span> <span class="o">+=</span> <span class="n">train_counter_</span>
+
+         <span class="n">train_loss</span> <span class="o">=</span> <span class="n">train_running_loss</span> <span class="o">/</span> <span class="n">train_len</span>
+         <span class="n">train_accuracy</span> <span class="o">=</span> <span class="n">train_running_counter</span> <span class="o">/</span> <span class="n">train_len</span>
+
+         <span class="n">tk0</span><span class="o">.</span><span class="n">set_description_str</span><span class="p">(</span><span class="s1">&#39;Epoch </span><span class="si">{}</span><span class="s1">/</span><span class="si">{}</span><span class="s1"> : Training&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">start_epoch</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">epochs</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+         <span class="n">tk0</span><span class="o">.</span><span class="n">set_postfix</span><span class="p">({</span><span class="s1">&#39;Train_Loss&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">train_loss</span><span class="p">),</span> <span class="s1">&#39;Train_Accuracy&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.5f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">train_accuracy</span><span class="p">)})</span>
+     <span class="n">scheduler</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+     <span class="n">log</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_loss</span><span class="p">)</span>
+     <span class="n">log</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">train_accuracy</span><span class="p">)</span>
+     <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">model_save_path</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">epoch</span><span class="p">)</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">model_name</span><span class="p">))</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Model : &quot;&#39;</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">model_save_path</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">epoch</span><span class="p">)</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">model_name</span> <span class="o">+</span> <span class="s1">&#39;&quot; saved.&#39;</span><span class="p">)</span>
+
+     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">result_record_path</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+         <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csvfile</span><span class="p">)</span>
+         <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">log</span><span class="p">)</span>
+     <span class="n">val_loss</span><span class="p">,</span> <span class="n">val_accuracy</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">val_dataloader</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span><span class="n">input_padding</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+     <span class="n">log</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val_loss</span><span class="p">)</span>
+     <span class="n">log</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val_accuracy</span><span class="p">)</span>
+ <span class="k">return</span> <span class="n">train_loss</span><span class="p">,</span> <span class="n">train_accuracy</span><span class="p">,</span> <span class="n">val_loss</span><span class="p">,</span> <span class="n">val_accuracy</span><span class="p">,</span> <span class="n">log</span>
+
+ <span class="k">def</span> <span class="nf">eval</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">val_dataloader</span><span class="p">,</span> <span class="n">epoch</span><span class="p">,</span> <span class="n">input_padding</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+     <span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+         <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+         <span class="n">val_len</span> <span class="o">=</span> <span class="mf">0.0</span>
+         <span class="n">val_running_counter</span> <span class="o">=</span> <span class="mf">0.0</span>
+         <span class="n">val_running_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+         <span class="n">tk1</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">val_dataloader</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">val_dataloader</span><span class="p">)))</span>
+         <span class="k">for</span> <span class="n">val_iter</span><span class="p">,</span> <span class="n">val_data_batch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tk1</span><span class="p">):</span>
+             <span class="n">val_images</span><span class="p">,</span> <span class="n">val_labels</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">data_to_cplex</span><span class="p">(</span><span class="n">val_data_batch</span><span class="p">)</span>
+             <span class="n">val_outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">val_images</span><span class="p">)</span>
+
+             <span class="n">val_loss_</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">val_outputs</span><span class="p">,</span> <span class="n">val_labels</span><span class="p">)</span>
+             <span class="n">val_counter_</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val_labels</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val_outputs</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+             <span class="n">val_len</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">val_labels</span><span class="p">)</span>
+             <span class="n">val_running_loss</span> <span class="o">+=</span> <span class="n">val_loss_</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+             <span class="n">val_running_counter</span> <span class="o">+=</span> <span class="n">val_counter_</span>
+
+             <span class="n">val_loss</span> <span class="o">=</span> <span class="n">val_running_loss</span> <span class="o">/</span> <span class="n">val_len</span>
+             <span class="n">val_accuracy</span> <span class="o">=</span> <span class="n">val_running_counter</span> <span class="o">/</span> <span class="n">val_len</span>
+
+             <span class="n">tk1</span><span class="o">.</span><span class="n">set_description_str</span><span class="p">(</span><span class="s1">&#39;Epoch </span><span class="si">{}</span><span class="s1">/</span><span class="si">{}</span><span class="s1"> : Validating&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">start_epoch</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">args</span><span class="o">.</span><span class="n">epochs</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">))</span>
+             <span class="n">tk1</span><span class="o">.</span><span class="n">set_postfix</span><span class="p">({</span><span class="s1">&#39;Val_Loss&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.5f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">val_loss</span><span class="p">),</span> <span class="s1">&#39;Val_Accuarcy&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.5f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">val_accuracy</span><span class="p">)})</span>
+     <span class="k">return</span> <span class="n">val_loss</span><span class="p">,</span> <span class="n">val_accuracy</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out"><strong>Simple training results</strong>
+setups: learning rate = 0.2, amplitude_factor=2, epochs=5, dataset=MNIST-10)</p>
+<div class="sphx-glr-script-out highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">00</span>:11&lt;<span class="m">00</span>:00,  <span class="m">8</span>.50it/s, <span class="nv">Train_Loss</span><span class="o">=</span><span class="m">0</span>.06, <span class="nv">Train_Accuracy</span><span class="o">=</span><span class="m">0</span>.96553<span class="o">]</span>
+Epoch <span class="m">10</span>/20 : Validating: <span class="m">100</span>%<span class="p">|</span>█<span class="p">|</span> <span class="m">17</span>/17 <span class="o">[</span><span class="m">00</span>:02&lt;<span class="m">00</span>:00,  <span class="m">6</span>.94it/s, <span class="nv">Val_Loss</span><span class="o">=</span><span class="m">0</span>.07025, <span class="nv">Val_Accuarcy</span><span class="o">=</span><span class="m">0</span>.96<span class="o">]</span>
+</pre></div>
+</div>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-d2nn-training-example1-py">
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/2b7b2b2d79fdb47352aa0e7022894a80/tutorial_02_codesign.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">tutorial_02_codesign.py</span></code></a></p>
+</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># example of using code tutorial_02_codesign.py: training a 2-layer D2NN with SLM parameters defined in device_parameters/ folder</span>
+python tutorial_02_codesign.py --phase-file<span class="o">=</span>device_parameters/phase.csv  --intensity-file<span class="o">=</span>device_parameters/intensity.csv --lr<span class="o">=</span><span class="m">0</span>.2 --depth<span class="o">=</span><span class="m">2</span> --batch-size<span class="o">=</span><span class="m">600</span> --dataset<span class="o">=</span>mnist --depth<span class="o">=</span><span class="m">2</span> --distance<span class="o">=</span><span class="m">0</span>.6604 --sys-size<span class="o">=</span><span class="m">200</span> --amp-factor<span class="o">=</span><span class="m">50</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../authors.html" class="btn btn-neutral float-right" title="LightRidge Authors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tutorial_02.html" class="btn btn-neutral float-left" title="Tutorial 02: Material Reflection-aware D2NNs Co-Design" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
