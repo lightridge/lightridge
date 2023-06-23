@@ -1,5 +1,5 @@
 ==========
-Python API
+LightRidge API
 ==========
 
 .. toctree::
