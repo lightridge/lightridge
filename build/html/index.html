@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -19,28 +18,29 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_size.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_size.css?v=3b072d6b" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
+    <script src="_static/jquery.js?v=5d32c60e"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="_static/documentation_options.js?v=79d558ae"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -55,6 +55,15 @@
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -95,7 +104,8 @@
     <span class="fa-solid fa-bars"></span>
   </label>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
   
@@ -111,7 +121,6 @@
 </a></div>
     
   </div>
-  
   
   <div class="col-lg-9 navbar-header-items">
     
@@ -153,6 +162,13 @@
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="lightridge_tutorial_ASPLOS23_AE.html">
+                        Welcome to LightRidge — An Open-Source Hardware Project for Optical AI
+                      </a>
+                    </li>
+                
   </ul>
 </nav></div>
       
@@ -163,23 +179,25 @@
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
         <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -190,18 +208,20 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
       <span class="fa-solid fa-outdent"></span>
     </label>
   
@@ -257,6 +277,13 @@ document.write(`
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="lightridge_tutorial_ASPLOS23_AE.html">
+                        Welcome to LightRidge — An Open-Source Hardware Project for Optical AI
+                      </a>
+                    </li>
+                
   </ul>
 </nav></div>
         
@@ -269,10 +296,10 @@ document.write(`
           <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -305,21 +332,22 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="welcome-to-lightridge-an-open-source-hardware-project-for-optical-ai">
-<h1>Welcome to LightRidge — An Open-Source Hardware Project for Optical AI!<a class="headerlink" href="#welcome-to-lightridge-an-open-source-hardware-project-for-optical-ai" title="Permalink to this heading">#</a></h1>
+<h1>Welcome to LightRidge — An Open-Source Hardware Project for Optical AI!<a class="headerlink" href="#welcome-to-lightridge-an-open-source-hardware-project-for-optical-ai" title="Link to this heading">#</a></h1>
 <p>Contact: <a class="reference external" href="https://lyj1201.github.io/yingjieli/">Yingjie Li</a>  (<a class="reference external" href="mailto:yingjie&#46;li&#37;&#52;&#48;utah&#46;edu">yingjie<span>&#46;</span>li<span>&#64;</span>utah<span>&#46;</span>edu</a>), <a class="reference external" href="http://ycunxi.github.io/cunxiyu/">Cunxi Yu</a> (<a class="reference external" href="mailto:cunxi&#46;yu&#37;&#52;&#48;utah&#46;edu">cunxi<span>&#46;</span>yu<span>&#64;</span>utah<span>&#46;</span>edu</a>)</p>
 <section id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h2>
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="samples.html">LightRidge Sample</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">LightRidge Case-studies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pythonapi.html">LightRidge API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lightridge_tutorial_ASPLOS23_AE.html">Welcome to LightRidge — An Open-Source Hardware Project for Optical AI</a></li>
 </ul>
 </div>
 </section>
 <section id="lightridge-design-flow">
-<h2>LightRidge Design Flow<a class="headerlink" href="#lightridge-design-flow" title="Permalink to this heading">#</a></h2>
+<h2>LightRidge Design Flow<a class="headerlink" href="#lightridge-design-flow" title="Link to this heading">#</a></h2>
 <p>LightRidge is an open-source framework for end-to-end optical machine learning (ML) compilation, which connects <strong>physics to system</strong>. It is specifically designed for diffractive optical computing, offering a comprehensive set of features (Check out our <a class="reference external" href="https://arxiv.org/pdf/2306.11268.pdf">ASPLOS’24 paper</a> for details):</p>
 <a class="reference internal image-reference" href="_images/lightridge_flow.png"><img alt="lightridge_flow" src="_images/lightridge_flow.png" style="width: 1100px;" /></a>
 <br><ul class="simple">
@@ -330,7 +358,7 @@ document.write(`
 </ul>
 </section>
 <section id="lightridge-donns-design-showcase">
-<h2>LightRidge DONNs Design Showcase<a class="headerlink" href="#lightridge-donns-design-showcase" title="Permalink to this heading">#</a></h2>
+<h2>LightRidge DONNs Design Showcase<a class="headerlink" href="#lightridge-donns-design-showcase" title="Link to this heading">#</a></h2>
 <p><strong>Case study 1 – Visible Range Codesign on MNIST-10 [1][3][5]</strong></p>
 <p>Link to Code Example: <a class="reference external" href="https://lightridge.github.io/lightridge/tutorials/tutorial_01_d2nn_training.html">Code Example</a>.</p>
 <a class="reference internal image-reference" href="_images/iccad2022.gif"><img alt="visible system" src="_images/iccad2022.gif" style="width: 650px;" /></a>
@@ -362,7 +390,7 @@ document.write(`
 <a class="reference internal image-reference" href="_images/showcase.gif"><img alt="image for slm vs mp" src="_images/showcase.gif" style="width: 450px;" /></a>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <p>[1] Li, Yingjie, Ruiyang Chen, Weilu Gao, and Cunxi Yu. “Physics-aware Differentiable Discrete Codesign for Diffractive Optical Neural Networks.” In Proceedings of the 41st IEEE/ACM International Conference on Computer-Aided Design (ICCAD’22), pp. 1-9. 2022.</p>
 <p>[2] Li, Yingjie, Ruiyang Chen, Berardi Sensale-Rodriguez, Weilu Gao, and Cunxi Yu. “Real-time multi-task diffractive deep neural networks via hardware-software co-design.” Scientific reports 11, no. 1 (2021): 11013.</p>
 <p>[3] Ruiyang Chen*, Yingjie Li*(equal contribution), Minhan Lou, Jichao Fan, Yingheng Tang, Berardi Sensale-Rodriguez, Cunxi Yu, and Weilu Gao. “Physics-aware Complex-valued Adversarial Machine Learning in Reconfigurable Diffractive All-optical Neural Network.”
@@ -377,11 +405,10 @@ Laser &amp; Photonics Reviews. Vol 16, July 2022.</p>
               
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="right-next"
        href="installation.html"
@@ -392,10 +419,7 @@ Laser &amp; Photonics Reviews. Vol 16, July 2022.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -438,8 +462,8 @@ Laser &amp; Photonics Reviews. Vol 16, July 2022.</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -457,7 +481,7 @@ Laser &amp; Photonics Reviews. Vol 16, July 2022.</p>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     <br/>
   </p>
 </div>
@@ -465,10 +489,11 @@ Laser &amp; Photonics Reviews. Vol 16, July 2022.</p>
     </div>
   
   
+  
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.1.
 </p></div>
       
     </div>

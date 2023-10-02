@@ -1,0 +1,1079 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Welcome to LightRidge — An Open-Source Hardware Project for Optical AI &#8212; LightRidge 0.1.6 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_size.css?v=3b072d6b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script src="_static/jquery.js?v=5d32c60e"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="_static/documentation_options.js?v=79d558ae"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lightridge_tutorial_ASPLOS23_AE';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="LightRidge Python API (lr.data) TBD" href="lightridge.data.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    <p class="title logo__title">LightRidge 0.1.6 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="samples.html">
+                        LightRidge Sample
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tutorials.html">
+                        LightRidge Case-studies
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="pythonapi.html">
+                        LightRidge API
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Welcome to LightRidge — An Open-Source Hardware Project for Optical AI
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="installation.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="samples.html">
+                        LightRidge Sample
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="tutorials.html">
+                        LightRidge Case-studies
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="pythonapi.html">
+                        LightRidge API
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
+                        Welcome to LightRidge — An Open-Source Hardware Project for Optical AI
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Welcome to...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="welcome-to-lightridge-an-open-source-hardware-project-for-optical-ai">
+<h1>Welcome to LightRidge — An Open-Source Hardware Project for Optical AI<a class="headerlink" href="#welcome-to-lightridge-an-open-source-hardware-project-for-optical-ai" title="Link to this heading">#</a></h1>
+<p>The following tutorial is a LightRidge tutorial of building a basic
+diffractive optical neural networks (DONNs)</p>
+<section id="note-this-colab-code-is-tested-with-free-colab-runtime-for-simple-artifact-evaluation-asplos-24-for-better-runtime-please-use-your-own-gpu-server">
+<h2>NOTE: This colab code is tested with free colab runtime for simple Artifact Evaluation (ASPLOS’24) . For better runtime, please use your own GPU server.<a class="headerlink" href="#note-this-colab-code-is-tested-with-free-colab-runtime-for-simple-artifact-evaluation-asplos-24-for-better-runtime-please-use-your-own-gpu-server" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install lightridge
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">lightridge</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="mf">0.2.1</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">torch</span><span class="o">&gt;=</span><span class="mf">1.12.0</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">2.0.1</span><span class="o">+</span><span class="n">cu118</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">torchvision</span><span class="o">&gt;=</span><span class="mf">0.13.0</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">0.15.2</span><span class="o">+</span><span class="n">cu118</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">setuptools</span><span class="o">&gt;=</span><span class="mi">42</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">67.7.2</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">lightpipes</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">2.1.4</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">filelock</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">torch</span><span class="o">&gt;=</span><span class="mf">1.12.0</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">3.12.2</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">typing</span><span class="o">-</span><span class="n">extensions</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">torch</span><span class="o">&gt;=</span><span class="mf">1.12.0</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">4.5.0</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">sympy</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">torch</span><span class="o">&gt;=</span><span class="mf">1.12.0</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">1.12</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">networkx</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">torch</span><span class="o">&gt;=</span><span class="mf">1.12.0</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">3.1</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">jinja2</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">torch</span><span class="o">&gt;=</span><span class="mf">1.12.0</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">3.1.2</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">triton</span><span class="o">==</span><span class="mf">2.0.0</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">torch</span><span class="o">&gt;=</span><span class="mf">1.12.0</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">2.0.0</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">cmake</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">triton</span><span class="o">==</span><span class="mf">2.0.0</span><span class="o">-&gt;</span><span class="n">torch</span><span class="o">&gt;=</span><span class="mf">1.12.0</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">3.27.4.1</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">lit</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">triton</span><span class="o">==</span><span class="mf">2.0.0</span><span class="o">-&gt;</span><span class="n">torch</span><span class="o">&gt;=</span><span class="mf">1.12.0</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">16.0.6</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">numpy</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">torchvision</span><span class="o">&gt;=</span><span class="mf">0.13.0</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">1.23.5</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">requests</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">torchvision</span><span class="o">&gt;=</span><span class="mf">0.13.0</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">2.31.0</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">pillow</span><span class="o">!=</span><span class="mf">8.3</span><span class="o">.*</span><span class="p">,</span><span class="o">&gt;=</span><span class="mf">5.3.0</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">torchvision</span><span class="o">&gt;=</span><span class="mf">0.13.0</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">9.4.0</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">scipy</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">lightpipes</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">1.11.2</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">matplotlib</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">lightpipes</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">3.7.1</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">MarkupSafe</span><span class="o">&gt;=</span><span class="mf">2.0</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">jinja2</span><span class="o">-&gt;</span><span class="n">torch</span><span class="o">&gt;=</span><span class="mf">1.12.0</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">2.1.3</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">contourpy</span><span class="o">&gt;=</span><span class="mf">1.0.1</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">matplotlib</span><span class="o">-&gt;</span><span class="n">lightpipes</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">1.1.0</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">cycler</span><span class="o">&gt;=</span><span class="mf">0.10</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">matplotlib</span><span class="o">-&gt;</span><span class="n">lightpipes</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">0.11.0</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">fonttools</span><span class="o">&gt;=</span><span class="mf">4.22.0</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">matplotlib</span><span class="o">-&gt;</span><span class="n">lightpipes</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">4.42.1</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">kiwisolver</span><span class="o">&gt;=</span><span class="mf">1.0.1</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">matplotlib</span><span class="o">-&gt;</span><span class="n">lightpipes</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">1.4.5</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">packaging</span><span class="o">&gt;=</span><span class="mf">20.0</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">matplotlib</span><span class="o">-&gt;</span><span class="n">lightpipes</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">23.1</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">pyparsing</span><span class="o">&gt;=</span><span class="mf">2.3.1</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">matplotlib</span><span class="o">-&gt;</span><span class="n">lightpipes</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">3.1.1</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">python</span><span class="o">-</span><span class="n">dateutil</span><span class="o">&gt;=</span><span class="mf">2.7</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">matplotlib</span><span class="o">-&gt;</span><span class="n">lightpipes</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">2.8.2</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">charset</span><span class="o">-</span><span class="n">normalizer</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">,</span><span class="o">&gt;=</span><span class="mi">2</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">requests</span><span class="o">-&gt;</span><span class="n">torchvision</span><span class="o">&gt;=</span><span class="mf">0.13.0</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">3.2.0</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">idna</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">,</span><span class="o">&gt;=</span><span class="mf">2.5</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">requests</span><span class="o">-&gt;</span><span class="n">torchvision</span><span class="o">&gt;=</span><span class="mf">0.13.0</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">3.4</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">urllib3</span><span class="o">&lt;</span><span class="mi">3</span><span class="p">,</span><span class="o">&gt;=</span><span class="mf">1.21.1</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">requests</span><span class="o">-&gt;</span><span class="n">torchvision</span><span class="o">&gt;=</span><span class="mf">0.13.0</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">2.0.4</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">certifi</span><span class="o">&gt;=</span><span class="mf">2017.4.17</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">requests</span><span class="o">-&gt;</span><span class="n">torchvision</span><span class="o">&gt;=</span><span class="mf">0.13.0</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">2023.7.22</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">mpmath</span><span class="o">&gt;=</span><span class="mf">0.19</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">sympy</span><span class="o">-&gt;</span><span class="n">torch</span><span class="o">&gt;=</span><span class="mf">1.12.0</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">1.3.0</span><span class="p">)</span>
+<span class="n">Requirement</span> <span class="n">already</span> <span class="n">satisfied</span><span class="p">:</span> <span class="n">six</span><span class="o">&gt;=</span><span class="mf">1.5</span> <span class="ow">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span> <span class="p">(</span><span class="kn">from</span> <span class="nn">python</span><span class="o">-</span><span class="n">dateutil</span><span class="o">&gt;=</span><span class="mf">2.7</span><span class="o">-&gt;</span><span class="n">matplotlib</span><span class="o">-&gt;</span><span class="n">lightpipes</span><span class="o">-&gt;</span><span class="n">lightridge</span><span class="p">)</span> <span class="p">(</span><span class="mf">1.16.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="step-1-lightridge-installation">
+<h3>Step 1: LightRidge installation<a class="headerlink" href="#step-1-lightridge-installation" title="Link to this heading">#</a></h3>
+<h1><p>LightRidge Design Flow</p>
+</h1>
+
+
+<p></p><p>More can be found at <a class="reference external" href="https://lightridge.github.io/lightridge/index">https://lightridge.github.io/lightridge/index</a>.html#</p>
+</section>
+<section id="step-2-check-lightridge-installation">
+<h3>Step 2: Check LightRidge installation<a class="headerlink" href="#step-2-check-lightridge-installation" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lightridge</span>
+<span class="kn">import</span> <span class="nn">lightridge.layers</span> <span class="k">as</span> <span class="nn">layers</span>
+<span class="kn">import</span> <span class="nn">lightridge.utils</span> <span class="k">as</span> <span class="nn">utils</span>
+<span class="kn">import</span> <span class="nn">lightridge.data</span> <span class="k">as</span> <span class="nn">dataset</span>
+<span class="kn">from</span>   <span class="nn">lightridge.get_h</span> <span class="kn">import</span> <span class="n">_field_Fresnel</span>
+</pre></div>
+</div>
+<pre class="literal-block">/usr/local/lib/python3.10/dist-packages/lightridge/get_h.py:27: UserWarning:
+<strong>************************</strong> WARNING <strong>*******************</strong>
+LightPipes: Cannot import pyFFTW, falling back to numpy.fft.
+(Try to) install pyFFTW on your computer for faster performance.
+Enter at a terminal prompt: python -m pip install pyfftw.
+Or reinstall LightPipes with the option pyfftw
+Enter: python -m pip install lightpipes[pyfftw]
+
+You can suppress warnings by using the -Wignore option:
+Enter: python _Wignore <strong>*</strong>.py
+<strong>*********************************************************</strong>
+  warnings.warn(_WARNING)</pre>
+</section>
+</section>
+<section id="gpu-details">
+<h2>GPU Details<a class="headerlink" href="#gpu-details" title="Link to this heading">#</a></h2>
+<p>The GPU details can be accessed by <code class="docutils literal notranslate"><span class="pre">!nvidia-smi</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!nvidia-smi
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Mon</span> <span class="n">Oct</span>  <span class="mi">2</span> <span class="mi">19</span><span class="p">:</span><span class="mi">31</span><span class="p">:</span><span class="mi">19</span> <span class="mi">2023</span>
+<span class="o">+-----------------------------------------------------------------------------+</span>
+<span class="o">|</span> <span class="n">NVIDIA</span><span class="o">-</span><span class="n">SMI</span> <span class="mf">525.105.17</span>   <span class="n">Driver</span> <span class="n">Version</span><span class="p">:</span> <span class="mf">525.105.17</span>   <span class="n">CUDA</span> <span class="n">Version</span><span class="p">:</span> <span class="mf">12.0</span>     <span class="o">|</span>
+<span class="o">|-------------------------------+----------------------+----------------------+</span>
+<span class="o">|</span> <span class="n">GPU</span>  <span class="n">Name</span>        <span class="n">Persistence</span><span class="o">-</span><span class="n">M</span><span class="o">|</span> <span class="n">Bus</span><span class="o">-</span><span class="n">Id</span>        <span class="n">Disp</span><span class="o">.</span><span class="n">A</span> <span class="o">|</span> <span class="n">Volatile</span> <span class="n">Uncorr</span><span class="o">.</span> <span class="n">ECC</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">Fan</span>  <span class="n">Temp</span>  <span class="n">Perf</span>  <span class="n">Pwr</span><span class="p">:</span><span class="n">Usage</span><span class="o">/</span><span class="n">Cap</span><span class="o">|</span>         <span class="n">Memory</span><span class="o">-</span><span class="n">Usage</span> <span class="o">|</span> <span class="n">GPU</span><span class="o">-</span><span class="n">Util</span>  <span class="n">Compute</span> <span class="n">M</span><span class="o">.</span> <span class="o">|</span>
+<span class="o">|</span>                               <span class="o">|</span>                      <span class="o">|</span>               <span class="n">MIG</span> <span class="n">M</span><span class="o">.</span> <span class="o">|</span>
+<span class="o">|===============================+======================+======================|</span>
+<span class="o">|</span>   <span class="mi">0</span>  <span class="n">Tesla</span> <span class="n">T4</span>            <span class="n">Off</span>  <span class="o">|</span> <span class="mi">00000000</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">04.0</span> <span class="n">Off</span> <span class="o">|</span>                    <span class="mi">0</span> <span class="o">|</span>
+<span class="o">|</span> <span class="n">N</span><span class="o">/</span><span class="n">A</span>   <span class="mi">68</span><span class="n">C</span>    <span class="n">P8</span>    <span class="mi">11</span><span class="n">W</span> <span class="o">/</span>  <span class="mi">70</span><span class="n">W</span> <span class="o">|</span>      <span class="mi">0</span><span class="n">MiB</span> <span class="o">/</span> <span class="mi">15360</span><span class="n">MiB</span> <span class="o">|</span>      <span class="mi">0</span><span class="o">%</span>      <span class="n">Default</span> <span class="o">|</span>
+<span class="o">|</span>                               <span class="o">|</span>                      <span class="o">|</span>                  <span class="n">N</span><span class="o">/</span><span class="n">A</span> <span class="o">|</span>
+<span class="o">+-------------------------------+----------------------+----------------------+</span>
+
+<span class="o">+-----------------------------------------------------------------------------+</span>
+<span class="o">|</span> <span class="n">Processes</span><span class="p">:</span>                                                                  <span class="o">|</span>
+<span class="o">|</span>  <span class="n">GPU</span>   <span class="n">GI</span>   <span class="n">CI</span>        <span class="n">PID</span>   <span class="n">Type</span>   <span class="n">Process</span> <span class="n">name</span>                  <span class="n">GPU</span> <span class="n">Memory</span> <span class="o">|</span>
+<span class="o">|</span>        <span class="n">ID</span>   <span class="n">ID</span>                                                   <span class="n">Usage</span>      <span class="o">|</span>
+<span class="o">|=============================================================================|</span>
+<span class="o">|</span>  <span class="n">No</span> <span class="n">running</span> <span class="n">processes</span> <span class="n">found</span>                                                 <span class="o">|</span>
+<span class="o">+-----------------------------------------------------------------------------+</span>
+</pre></div>
+</div>
+<section id="step-3-load-additional-packages-and-configure-your-training-device">
+<h3>Step 3: Load additional packages and configure your training device<a class="headerlink" href="#step-3-load-additional-packages-and-configure-your-training-device" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">time</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torchvision</span>
+<span class="kn">import</span> <span class="nn">torch.nn.functional</span> <span class="k">as</span> <span class="nn">F</span>
+<span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">transforms</span>
+<span class="kn">from</span> <span class="nn">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda:0&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">platform</span> <span class="kn">import</span> <span class="n">python_version</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Python version&quot;</span><span class="p">,</span> <span class="n">python_version</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pytorch - version&quot;</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pytorch - cuDNN version :&quot;</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">cudnn</span><span class="o">.</span><span class="n">version</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Python</span> <span class="n">version</span> <span class="mf">3.10.12</span>
+<span class="n">Pytorch</span> <span class="o">-</span> <span class="n">version</span> <span class="mf">2.0.1</span><span class="o">+</span><span class="n">cu118</span>
+<span class="n">Pytorch</span> <span class="o">-</span> <span class="n">cuDNN</span> <span class="n">version</span> <span class="p">:</span> <span class="mi">8700</span>
+</pre></div>
+</div>
+</section>
+<section id="step-4-constructing-donns">
+<h3>Step 4: Constructing DONNs<a class="headerlink" href="#step-4-constructing-donns" title="Link to this heading">#</a></h3>
+<p>The DONN model is constructed here. With defined diffractive layers and
+parameters, the model class works as a sequential container that stacks
+arbitrary numbers of customized diffractive layers in the order of light
+propagation in the DONN system and a detector plane. As a result, we
+construct a complete DONN system just like constructing a conventional
+neural network.</p>
+<figure class="align-default" id="id1">
+<img alt="DONN Overview" src="https://lightridge.github.io/lightridge/_images/sci18.jpg" />
+<figcaption>
+<p><span class="caption-text">DONN Overview</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p>Set the hardware information for the emulation</p></li>
+</ol>
+<ul class="simple">
+<li><p>Input laser source information: <em>wavelength</em> (532e-9)</p></li>
+<li><p>System size: <em>sys_size</em> (200)</p></li>
+<li><p>Pixel size: <em>pixel_size</em> (3.6e-5)</p></li>
+<li><p>Padding size for emulations: <em>pad</em> (100)</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Define the system parameters for model construction</p></li>
+</ol>
+<ul class="simple">
+<li><p>Diffractive layers: inlcudes diffraction approximation and phase
+modulation in <em>layers.DiffractLayer_Raw/layers.DiffractLayer</em>:</p></li>
+<li><p>Mathematical approximation for light diffraction: <em>approx</em></p></li>
+<li><p>Diffraction distance: <em>distance</em></p></li>
+<li><p>System depth: <em>num_layers</em></p></li>
+<li><p>Training regularization: <em>amp_factor</em></p></li>
+<li><p>Detector design: defined in <em>layers.Detector</em>:</p></li>
+<li><p>Location coordinate for detector regions: <em>det_loc_x, det_loc_y</em>,</p></li>
+<li><p>Size for each sub-detector: <em>det_size</em></p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Visualization functions</p></li>
+</ol>
+<ul class="simple">
+<li><p>Propogation pattern visualization: <em>prop_view</em></p></li>
+<li><p>Trainable parameter, phase modulation visualization: <em>phase_view</em></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DiffractiveClassifier_Raw</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">det_x_loc</span><span class="p">,</span> <span class="n">det_y_loc</span><span class="p">,</span> <span class="n">det_size</span><span class="p">,</span> <span class="n">wavelength</span><span class="o">=</span><span class="mf">5.32e-7</span><span class="p">,</span> <span class="n">pixel_size</span><span class="o">=</span><span class="mf">0.000036</span><span class="p">,</span>
+                 <span class="n">batch_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sys_size</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="n">pad</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">num_layers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">amp_factor</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">approx</span><span class="o">=</span><span class="s2">&quot;Fresnel3&quot;</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">DiffractiveClassifier_Raw</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">amp_factor</span> <span class="o">=</span> <span class="n">amp_factor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">sys_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">distance</span> <span class="o">=</span> <span class="n">distance</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span> <span class="o">=</span> <span class="n">wavelength</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pixel_size</span> <span class="o">=</span> <span class="n">pixel_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pad</span> <span class="o">=</span> <span class="n">pad</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">approx</span><span class="o">=</span><span class="n">approx</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">diffractive_layers</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">([</span><span class="n">layers</span><span class="o">.</span><span class="n">DiffractLayer_Raw</span><span class="p">(</span><span class="n">wavelength</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">pixel_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_size</span><span class="p">,</span>
+                                                                                    <span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">pad</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">distance</span><span class="p">,</span>
+                                                                                    <span class="n">amplitude_factor</span> <span class="o">=</span> <span class="n">amp_factor</span><span class="p">,</span> <span class="n">approx</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">approx</span><span class="p">,</span>
+                                                                                    <span class="n">phase_mod</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_layers</span><span class="p">)])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_diffraction</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">DiffractLayer_Raw</span><span class="p">(</span><span class="n">wavelength</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">pixel_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_size</span><span class="p">,</span>
+                                                            <span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">pad</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">distance</span><span class="p">,</span>
+                                                            <span class="n">approx</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">approx</span><span class="p">,</span> <span class="n">phase_mod</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">detector</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Detector</span><span class="p">(</span><span class="n">x_loc</span><span class="o">=</span><span class="n">det_x_loc</span><span class="p">,</span> <span class="n">y_loc</span><span class="o">=</span><span class="n">det_y_loc</span><span class="p">,</span> <span class="n">det_size</span><span class="o">=</span><span class="n">det_size</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">diffractive_layers</span><span class="p">):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_diffraction</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">detector</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">output</span>
+
+    <span class="k">def</span> <span class="nf">prop_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">prop_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">prop_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="c1">#* self.amp_factor</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">diffractive_layers</span><span class="p">):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="n">prop_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_diffraction</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">prop_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">utils</span><span class="o">.</span><span class="n">forward_func_visualization</span><span class="p">(</span><span class="n">prop_list</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="s2">&quot;mnist_</span><span class="si">%s</span><span class="s2">.pdf&quot;</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">intensity_plot</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">detector</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">phase_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;hsv&quot;</span><span class="p">):</span>
+        <span class="n">phase_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">diffractive_layers</span><span class="p">):</span>
+            <span class="n">phase_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">layer</span><span class="o">.</span><span class="n">phase</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">phase_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+        <span class="n">utils</span><span class="o">.</span><span class="n">phase_visualization</span><span class="p">(</span><span class="n">phase_list</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="s2">&quot;prop_view_reflection.pdf&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+</pre></div>
+</div>
+</section>
+<section id="step-5-training-donns">
+<h3>Step 5: Training DONNs<a class="headerlink" href="#step-5-training-donns" title="Link to this heading">#</a></h3>
+<p>The fully differentiable DONN system can use conventional
+backpropagation engine to optimize.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="n">train_dataloader</span><span class="p">,</span> <span class="n">val_dataloader</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">lr</span><span class="p">):</span>
+    <span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;training starts.&#39;</span><span class="p">)</span>
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">)</span>
+    <span class="n">scheduler</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">lr_scheduler</span><span class="o">.</span><span class="n">StepLR</span><span class="p">(</span><span class="n">optimizer</span><span class="p">,</span><span class="n">step_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+        <span class="n">log</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+        <span class="n">train_len</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">train_running_counter</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">train_running_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">tk0</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">train_dataloader</span><span class="p">)))</span>
+        <span class="k">for</span> <span class="n">train_iter</span><span class="p">,</span> <span class="n">train_data_batch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tk0</span><span class="p">):</span>
+            <span class="n">train_images</span><span class="p">,</span> <span class="n">train_labels</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">data_to_cplex</span><span class="p">(</span><span class="n">train_data_batch</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda:0&#39;</span><span class="p">)</span>
+            <span class="n">train_outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">train_images</span><span class="p">)</span>
+            <span class="n">train_loss_</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">train_outputs</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">)</span>
+            <span class="n">train_counter_</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">train_labels</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">train_outputs</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+            <span class="n">train_loss_</span><span class="o">.</span><span class="n">backward</span><span class="p">(</span><span class="n">retain_graph</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+            <span class="n">train_len</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_labels</span><span class="p">)</span>
+            <span class="n">train_running_loss</span> <span class="o">+=</span> <span class="n">train_loss_</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            <span class="n">train_running_counter</span> <span class="o">+=</span> <span class="n">train_counter_</span>
+
+            <span class="n">train_loss</span> <span class="o">=</span> <span class="n">train_running_loss</span> <span class="o">/</span> <span class="n">train_len</span>
+            <span class="n">train_accuracy</span> <span class="o">=</span> <span class="n">train_running_counter</span> <span class="o">/</span> <span class="n">train_len</span>
+
+            <span class="n">tk0</span><span class="o">.</span><span class="n">set_description_str</span><span class="p">(</span><span class="s1">&#39;Epoch </span><span class="si">{}</span><span class="s1">/</span><span class="si">{}</span><span class="s1"> : Training&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">epochs</span><span class="p">))</span>
+            <span class="n">tk0</span><span class="o">.</span><span class="n">set_postfix</span><span class="p">({</span><span class="s1">&#39;Train_Loss&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">train_loss</span><span class="p">),</span> <span class="s1">&#39;Train_Accuracy&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.5f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">train_accuracy</span><span class="p">)})</span>
+        <span class="n">scheduler</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+        <span class="n">val_loss</span><span class="p">,</span> <span class="n">val_accuracy</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">val_dataloader</span><span class="p">,</span> <span class="n">epoch</span><span class="p">)</span>
+
+
+    <span class="k">return</span> <span class="n">train_loss</span><span class="p">,</span> <span class="n">train_accuracy</span><span class="p">,</span> <span class="n">val_loss</span><span class="p">,</span> <span class="n">val_accuracy</span><span class="p">,</span> <span class="n">log</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">eval</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">val_dataloader</span><span class="p">,</span> <span class="n">epoch</span><span class="p">):</span>
+    <span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+        <span class="n">val_len</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">val_running_counter</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">val_running_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+        <span class="n">tk1</span> <span class="o">=</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">val_dataloader</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">total</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">val_dataloader</span><span class="p">)))</span>
+        <span class="k">for</span> <span class="n">val_iter</span><span class="p">,</span> <span class="n">val_data_batch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">tk1</span><span class="p">):</span>
+            <span class="n">val_images</span><span class="p">,</span> <span class="n">val_labels</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">data_to_cplex</span><span class="p">(</span><span class="n">val_data_batch</span><span class="p">,</span><span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda:0&#39;</span><span class="p">)</span>
+            <span class="n">val_outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">val_images</span><span class="p">)</span>
+
+            <span class="n">val_loss_</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">val_outputs</span><span class="p">,</span> <span class="n">val_labels</span><span class="p">)</span>
+            <span class="n">val_counter_</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val_labels</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">val_outputs</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+            <span class="n">val_len</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">val_labels</span><span class="p">)</span>
+            <span class="n">val_running_loss</span> <span class="o">+=</span> <span class="n">val_loss_</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            <span class="n">val_running_counter</span> <span class="o">+=</span> <span class="n">val_counter_</span>
+
+            <span class="n">val_loss</span> <span class="o">=</span> <span class="n">val_running_loss</span> <span class="o">/</span> <span class="n">val_len</span>
+            <span class="n">val_accuracy</span> <span class="o">=</span> <span class="n">val_running_counter</span> <span class="o">/</span> <span class="n">val_len</span>
+
+            <span class="n">tk1</span><span class="o">.</span><span class="n">set_description_str</span><span class="p">(</span><span class="s1">&#39;Validating&#39;</span><span class="p">)</span>
+            <span class="n">tk1</span><span class="o">.</span><span class="n">set_postfix</span><span class="p">({</span><span class="s1">&#39;Val_Loss&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.5f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">val_loss</span><span class="p">),</span> <span class="s1">&#39;Val_Accuarcy&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">{:.5f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">val_accuracy</span><span class="p">)})</span>
+    <span class="k">return</span> <span class="n">val_loss</span><span class="p">,</span> <span class="n">val_accuracy</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameters define</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">sys_size</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">distance</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">pixel_size</span> <span class="o">=</span> <span class="mf">3.6e-5</span>
+<span class="n">pad</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">wavelength</span> <span class="o">=</span> <span class="mf">5.32e-7</span>
+<span class="n">approx</span> <span class="o">=</span> <span class="s1">&#39;Fresnel&#39;</span>
+<span class="n">amp_factor</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">depth</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">device</span> <span class="o">=</span> <span class="s2">&quot;cuda:0&quot;</span>
+<span class="n">epochs</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">lr</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">det_x_loc</span> <span class="o">=</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">140</span><span class="p">]</span>
+<span class="n">det_y_loc</span> <span class="o">=</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">140</span><span class="p">]</span>
+<span class="n">det_size</span> <span class="o">=</span> <span class="mi">20</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># dataset loader</span>
+<span class="n">load_dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="n">batch_size</span> <span class="o">=</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">system_size</span> <span class="o">=</span> <span class="n">sys_size</span><span class="p">,</span> <span class="n">datapath</span> <span class="o">=</span> <span class="s2">&quot;./data&quot;</span><span class="p">)</span>
+<span class="n">train_dataloader</span><span class="p">,</span> <span class="n">val_dataloader</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="o">.</span><span class="n">MNIST</span><span class="p">()</span>
+<span class="c1">#train_dataloader, val_dataloader = load_dataset.FMNIST()</span>
+
+<span class="c1"># model construction</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">DiffractiveClassifier_Raw</span><span class="p">(</span><span class="n">num_layers</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span> <span class="n">batch_norm</span> <span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+                        <span class="c1">#det_y_loc = [105, 125, 145, 95, 115, 135, 155, 105, 125, 145], #det_y_loc = [175,195,215,165,185,205,225,175,195,215],</span>
+                        <span class="c1">#det_x_loc = [105, 105, 105, 125, 125, 125, 125, 145, 145, 145], #, det_x_loc = [175,175,175,195,195,195,195,215,215,215],</span>
+                        <span class="c1">#det_size = 10,</span>
+                        <span class="n">det_x_loc</span> <span class="o">=</span> <span class="n">det_x_loc</span><span class="p">,</span>
+                        <span class="n">det_y_loc</span> <span class="o">=</span> <span class="n">det_y_loc</span><span class="p">,</span>
+                        <span class="n">det_size</span> <span class="o">=</span> <span class="n">det_size</span><span class="p">,</span>
+                        <span class="n">wavelength</span><span class="o">=</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">pixel_size</span> <span class="o">=</span> <span class="n">pixel_size</span><span class="p">,</span> <span class="n">sys_size</span><span class="o">=</span><span class="n">sys_size</span><span class="p">,</span> <span class="n">pad</span> <span class="o">=</span> <span class="n">pad</span><span class="p">,</span>
+                        <span class="n">distance</span><span class="o">=</span><span class="n">distance</span><span class="p">,</span><span class="n">amp_factor</span><span class="o">=</span><span class="n">amp_factor</span><span class="p">,</span> <span class="n">approx</span><span class="o">=</span><span class="n">approx</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="c1"># mode training</span>
+<span class="n">train</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">train_dataloader</span><span class="p">,</span> <span class="n">val_dataloader</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">lr</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Network</span> <span class="ow">is</span> <span class="n">constructed</span> <span class="n">using</span> <span class="n">Fresnel</span> <span class="n">approximation</span>
+<span class="n">Network</span> <span class="ow">is</span> <span class="n">constructed</span> <span class="n">using</span> <span class="n">Fresnel</span> <span class="n">approximation</span>
+<span class="n">Network</span> <span class="ow">is</span> <span class="n">constructed</span> <span class="n">using</span> <span class="n">Fresnel</span> <span class="n">approximation</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">torch</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">dataloader</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">560</span><span class="p">:</span> <span class="ne">UserWarning</span><span class="p">:</span> <span class="n">This</span> <span class="n">DataLoader</span> <span class="n">will</span> <span class="n">create</span> <span class="mi">8</span> <span class="n">worker</span> <span class="n">processes</span> <span class="ow">in</span> <span class="n">total</span><span class="o">.</span> <span class="n">Our</span> <span class="n">suggested</span> <span class="nb">max</span> <span class="n">number</span> <span class="n">of</span> <span class="n">worker</span> <span class="ow">in</span> <span class="n">current</span> <span class="n">system</span> <span class="ow">is</span> <span class="mi">2</span><span class="p">,</span> <span class="n">which</span> <span class="ow">is</span> <span class="n">smaller</span> <span class="n">than</span> <span class="n">what</span> <span class="n">this</span> <span class="n">DataLoader</span> <span class="ow">is</span> <span class="n">going</span> <span class="n">to</span> <span class="n">create</span><span class="o">.</span> <span class="n">Please</span> <span class="n">be</span> <span class="n">aware</span> <span class="n">that</span> <span class="n">excessive</span> <span class="n">worker</span> <span class="n">creation</span> <span class="n">might</span> <span class="n">get</span> <span class="n">DataLoader</span> <span class="n">running</span> <span class="n">slow</span> <span class="ow">or</span> <span class="n">even</span> <span class="n">freeze</span><span class="p">,</span> <span class="n">lower</span> <span class="n">the</span> <span class="n">worker</span> <span class="n">number</span> <span class="n">to</span> <span class="n">avoid</span> <span class="n">potential</span> <span class="n">slowness</span><span class="o">/</span><span class="n">freeze</span> <span class="k">if</span> <span class="n">necessary</span><span class="o">.</span>
+  <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">_create_warning_msg</span><span class="p">(</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Network</span> <span class="ow">is</span> <span class="n">constructed</span> <span class="n">using</span> <span class="n">Fresnel</span> <span class="n">approximation</span>
+<span class="n">Network</span> <span class="ow">is</span> <span class="n">constructed</span> <span class="n">using</span> <span class="n">Fresnel</span> <span class="n">approximation</span>
+<span class="n">Network</span> <span class="ow">is</span> <span class="n">constructed</span> <span class="n">using</span> <span class="n">Fresnel</span> <span class="n">approximation</span>
+<span class="n">training</span> <span class="n">starts</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Epoch 0/10 : Training: 100%|███████████████████████████████████████████████| 120/120 [01:18&lt;00:00,  1.52it/s, Train_Loss=0.27, Train_Accuracy=0.85233]
+Validating: 100%|███████████| 20/20 [00:10&lt;00:00,  1.90it/s, Val_Loss=0.17748, Val_Accuarcy=0.91400]
+Epoch 1/10 : Training: 100%|███████████████████████████████████████████████| 120/120 [01:15&lt;00:00,  1.59it/s, Train_Loss=0.18, Train_Accuracy=0.91192]
+Validating: 100%|███████████| 20/20 [00:09&lt;00:00,  2.12it/s, Val_Loss=0.16505, Val_Accuarcy=0.91790]
+Epoch 2/10 : Training: 100%|███████████████████████████████████████████████| 120/120 [01:15&lt;00:00,  1.59it/s, Train_Loss=0.17, Train_Accuracy=0.91912]
+Validating: 100%|███████████| 20/20 [00:09&lt;00:00,  2.06it/s, Val_Loss=0.15756, Val_Accuarcy=0.92510]
+Epoch 3/10 : Training: 100%|███████████████████████████████████████████████| 120/120 [01:14&lt;00:00,  1.61it/s, Train_Loss=0.16, Train_Accuracy=0.92135]
+Validating: 100%|███████████| 20/20 [00:09&lt;00:00,  2.09it/s, Val_Loss=0.15753, Val_Accuarcy=0.92060]
+Epoch 4/10 : Training: 100%|███████████████████████████████████████████████| 120/120 [01:15&lt;00:00,  1.59it/s, Train_Loss=0.16, Train_Accuracy=0.92245]
+Validating: 100%|███████████| 20/20 [00:08&lt;00:00,  2.25it/s, Val_Loss=0.15468, Val_Accuarcy=0.92590]
+Epoch 5/10 : Training: 100%|███████████████████████████████████████████████| 120/120 [01:15&lt;00:00,  1.59it/s, Train_Loss=0.16, Train_Accuracy=0.92373]
+Validating: 100%|███████████| 20/20 [00:09&lt;00:00,  2.09it/s, Val_Loss=0.15384, Val_Accuarcy=0.92400]
+Epoch 6/10 : Training: 100%|███████████████████████████████████████████████| 120/120 [01:14&lt;00:00,  1.61it/s, Train_Loss=0.16, Train_Accuracy=0.92553]
+Validating: 100%|███████████| 20/20 [00:09&lt;00:00,  2.02it/s, Val_Loss=0.14986, Val_Accuarcy=0.93020]
+Epoch 7/10 : Training: 100%|███████████████████████████████████████████████| 120/120 [01:17&lt;00:00,  1.55it/s, Train_Loss=0.16, Train_Accuracy=0.92615]
+Validating: 100%|███████████| 20/20 [00:09&lt;00:00,  2.13it/s, Val_Loss=0.15055, Val_Accuarcy=0.92710]
+Epoch 8/10 : Training: 100%|███████████████████████████████████████████████| 120/120 [01:15&lt;00:00,  1.60it/s, Train_Loss=0.16, Train_Accuracy=0.92498]
+Validating: 100%|███████████| 20/20 [00:10&lt;00:00,  1.95it/s, Val_Loss=0.15229, Val_Accuarcy=0.92690]
+Epoch 9/10 : Training: 100%|███████████████████████████████████████████████| 120/120 [01:14&lt;00:00,  1.61it/s, Train_Loss=0.16, Train_Accuracy=0.92597]
+Validating: 100%|███████████| 20/20 [00:09&lt;00:00,  2.21it/s, Val_Loss=0.15106, Val_Accuarcy=0.92790]
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mf">0.1554327927907308</span><span class="p">,</span>
+ <span class="n">tensor</span><span class="p">(</span><span class="mf">0.9260</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda:0&#39;</span><span class="p">),</span>
+ <span class="mf">0.1510582004547119</span><span class="p">,</span>
+ <span class="n">tensor</span><span class="p">(</span><span class="mf">0.9279</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda:0&#39;</span><span class="p">),</span>
+ <span class="p">[])</span>
+</pre></div>
+</div>
+<p><strong>Note: We only showcase 10 epochs in this tutorial example to save the
+time. To reproduce the full results, you will need 100 epochs as
+reported in our paper.</strong></p>
+</section>
+<section id="step-6-visualizations">
+<h3>Step 6: Visualizations<a class="headerlink" href="#step-6-visualizations" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualization for phase modulation</span>
+<span class="n">model</span><span class="o">.</span><span class="n">phase_view</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;twilight&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">])</span>
+</pre></div>
+</div>
+<img alt="lightridge_tutorial_ASPLOS23_AE_files/lightridge_tutorial_ASPLOS23_AE_20_1.png" src="lightridge_tutorial_ASPLOS23_AE_files/lightridge_tutorial_ASPLOS23_AE_20_1.png" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualization for propagation</span>
+<span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">((</span><span class="n">sys_size</span><span class="p">),</span><span class="n">interpolation</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">()])</span>
+<span class="n">val_dataset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span><span class="s2">&quot;./data/&quot;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+  <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+  <span class="c1"># feel free to add more round of inference test to see the magic of DONNs in Tasks!</span>
+  <span class="c1"># You just need to replace the index of the val_dataset vector.</span>
+  <span class="c1"># example round 1</span>
+  <span class="n">val_img</span><span class="p">,</span> <span class="n">val_label</span> <span class="o">=</span><span class="n">val_dataset</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="n">model</span><span class="o">.</span><span class="n">prop_view</span><span class="p">(</span><span class="n">val_img</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
+  <span class="c1"># example round 2</span>
+  <span class="n">val_img</span><span class="p">,</span> <span class="n">val_label</span> <span class="o">=</span><span class="n">val_dataset</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span>
+  <span class="n">model</span><span class="o">.</span><span class="n">prop_view</span><span class="p">(</span><span class="n">val_img</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span>
+<span class="mi">7</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">])</span>
+<span class="mi">0</span>
+<span class="mi">7</span> <span class="n">torch</span><span class="o">.</span><span class="n">Size</span><span class="p">([</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">])</span>
+</pre></div>
+</div>
+<img alt="lightridge_tutorial_ASPLOS23_AE_files/lightridge_tutorial_ASPLOS23_AE_21_1.png" src="lightridge_tutorial_ASPLOS23_AE_files/lightridge_tutorial_ASPLOS23_AE_21_1.png" />
+<img alt="lightridge_tutorial_ASPLOS23_AE_files/lightridge_tutorial_ASPLOS23_AE_21_2.png" src="lightridge_tutorial_ASPLOS23_AE_files/lightridge_tutorial_ASPLOS23_AE_21_2.png" />
+<img alt="lightridge_tutorial_ASPLOS23_AE_files/lightridge_tutorial_ASPLOS23_AE_21_3.png" src="lightridge_tutorial_ASPLOS23_AE_files/lightridge_tutorial_ASPLOS23_AE_21_3.png" />
+<img alt="lightridge_tutorial_ASPLOS23_AE_files/lightridge_tutorial_ASPLOS23_AE_21_4.png" src="lightridge_tutorial_ASPLOS23_AE_files/lightridge_tutorial_ASPLOS23_AE_21_4.png" />
+</section>
+<section id="step7-change-the-donn-model-with-codesign-information">
+<h3>Step7: Change the DONN model with codesign information<a class="headerlink" href="#step7-change-the-donn-model-with-codesign-information" title="Link to this heading">#</a></h3>
+<p>The measured quantization vector w.r.t the SLM is stored in folder
+<em>device_parameters</em> including the phase measurements, i.e., phase
+modulation vs applied voltage stage, in <em>phase.csv</em>, and the intensity
+measurements, i.e., intensity modulation vs applied voltage stage, in
+<em>intensity.csv</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DiffractiveClassifier_Codesign</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phase_func</span><span class="p">,</span> <span class="n">intensity_func</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">det_x_loc</span><span class="p">,</span> <span class="n">det_y_loc</span><span class="p">,</span> <span class="n">det_size</span><span class="p">,</span> <span class="n">wavelength</span><span class="o">=</span><span class="mf">5.32e-7</span><span class="p">,</span> <span class="n">pixel_size</span><span class="o">=</span><span class="mf">0.000036</span><span class="p">,</span>
+                 <span class="n">batch_norm</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">sys_size</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="n">pad</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">num_layers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">amp_factor</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">approx</span><span class="o">=</span><span class="s2">&quot;Fresnel3&quot;</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">DiffractiveClassifier_Codesign</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">amp_factor</span> <span class="o">=</span> <span class="n">amp_factor</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">sys_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">distance</span> <span class="o">=</span> <span class="n">distance</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span> <span class="o">=</span> <span class="n">wavelength</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pixel_size</span> <span class="o">=</span> <span class="n">pixel_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pad</span> <span class="o">=</span> <span class="n">pad</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">approx</span><span class="o">=</span><span class="n">approx</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">phase_func</span> <span class="o">=</span> <span class="n">phase_func</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">intensity_func</span> <span class="o">=</span> <span class="n">intensity_func</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">precision</span> <span class="o">=</span> <span class="n">precision</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">diffractive_layers</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">([</span><span class="n">layers</span><span class="o">.</span><span class="n">DiffractLayer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">phase_func</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">intensity_func</span><span class="p">,</span> <span class="n">wavelength</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">pixel_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_size</span><span class="p">,</span>
+                                                                            <span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">pad</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">distance</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">precision</span><span class="p">,</span>
+                                                                            <span class="n">amplitude_factor</span><span class="o">=</span><span class="n">amp_factor</span><span class="p">,</span> <span class="n">approx</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">approx</span><span class="p">,</span> <span class="n">phase_mod</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_layers</span><span class="p">)])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">last_diffraction</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">DiffractLayer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">phase_func</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">intensity_func</span><span class="p">,</span> <span class="n">wavelength</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">wavelength</span><span class="p">,</span> <span class="n">pixel_size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pixel_size</span><span class="p">,</span>
+                                                            <span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">pad</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="p">,</span> <span class="n">distance</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">distance</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">precision</span><span class="p">,</span>
+                                                            <span class="n">approx</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">approx</span><span class="p">,</span> <span class="n">phase_mod</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">detector</span> <span class="o">=</span> <span class="n">layers</span><span class="o">.</span><span class="n">Detector</span><span class="p">(</span><span class="n">x_loc</span><span class="o">=</span><span class="n">det_x_loc</span><span class="p">,</span> <span class="n">y_loc</span><span class="o">=</span><span class="n">det_y_loc</span><span class="p">,</span> <span class="n">det_size</span><span class="o">=</span><span class="n">det_size</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">diffractive_layers</span><span class="p">):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_diffraction</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">detector</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">output</span>
+
+    <span class="k">def</span> <span class="nf">prop_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">prop_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">prop_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="c1">#* self.amp_factor</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">diffractive_layers</span><span class="p">):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">layer</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="n">prop_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_diffraction</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">prop_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+            <span class="n">utils</span><span class="o">.</span><span class="n">forward_func_visualization</span><span class="p">(</span><span class="n">prop_list</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="s2">&quot;mnist_</span><span class="si">%s</span><span class="s2">.pdf&quot;</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span> <span class="n">idx</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">intensity_plot</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">detector</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="k">def</span> <span class="nf">phase_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;hsv&quot;</span><span class="p">):</span>
+        <span class="n">phase_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">diffractive_layers</span><span class="p">):</span>
+            <span class="n">phase_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">gumbel_softmax</span><span class="p">(</span><span class="n">layer</span><span class="o">.</span><span class="n">voltage</span><span class="p">,</span><span class="n">tau</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">hard</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">cpu</span><span class="p">(),</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">phase_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+        <span class="n">utils</span><span class="o">.</span><span class="n">phase_visualization</span><span class="p">(</span><span class="n">phase_list</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="s2">&quot;prop_view_reflection.pdf&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+</pre></div>
+</div>
+</section>
+<section id="step-8-add-the-device-parameters">
+<h3>Step 8: Add the device parameters.<a class="headerlink" href="#step-8-add-the-device-parameters" title="Link to this heading">#</a></h3>
+<p>Download the SLM <em>device_parameters</em> measured from our own setups. You
+can just replace this part with your own hardware systems.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameters define</span>
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">sys_size</span> <span class="o">=</span> <span class="mi">200</span>
+<span class="n">distance</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">pixel_size</span> <span class="o">=</span> <span class="mf">3.6e-5</span>
+<span class="n">pad</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">approx</span> <span class="o">=</span> <span class="s1">&#39;Fresnel3&#39;</span>
+<span class="n">amp_factor</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">depth</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">device</span> <span class="o">=</span> <span class="s2">&quot;cuda:0&quot;</span>
+<span class="n">epochs</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">lr</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">precision</span> <span class="o">=</span> <span class="mi">8</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!mkdir device_parameters
+!wget https://lightridge.github.io/lightridge/ASPLOS23_AE/intensity.csv
+!wget https://lightridge.github.io/lightridge/ASPLOS23_AE/phase.csv
+!mv intensity.csv device_parameters/
+!mv phase.csv device_parameters/
+
+phase_file =  &quot;./device_parameters/phase.csv&quot;
+phase_function = utils.phase_func(phase_file,  i_k=precision)
+#with open(&#39;phase_file.npy&#39;, &#39;wb&#39;) as f_phase:
+#    np.save(f_phase, phase_function.cpu().numpy())
+
+intensity_file =  &quot;./device_parameters/intensity.csv&quot;
+intensity_function = utils.intensity_func(intensity_file,  i_k=precision)
+#with open(&#39;intensity_file.npy&#39;, &#39;wb&#39;) as f_amp:
+#    np.save(f_amp, intensity_function.cpu().numpy())
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mkdir: cannot create directory ‘device_parameters’: File exists
+--2023-10-02 19:58:08--  https://lightridge.github.io/lightridge/ASPLOS23_AE/intensity.csv
+Resolving lightridge.github.io (lightridge.github.io)... 185.199.108.153, 185.199.109.153, 185.199.110.153, ...
+Connecting to lightridge.github.io (lightridge.github.io)|185.199.108.153|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1660 (1.6K) [text/csv]
+Saving to: ‘intensity.csv’
+
+intensity.csv       100%[===================&gt;]   1.62K  --.-KB/s    in 0s
+
+2023-10-02 19:58:08 (29.2 MB/s) - ‘intensity.csv’ saved [1660/1660]
+
+--2023-10-02 19:58:09--  https://lightridge.github.io/lightridge/ASPLOS23_AE/phase.csv
+Resolving lightridge.github.io (lightridge.github.io)... 185.199.108.153, 185.199.109.153, 185.199.110.153, ...
+Connecting to lightridge.github.io (lightridge.github.io)|185.199.108.153|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1596 (1.6K) [text/csv]
+Saving to: ‘phase.csv’
+
+phase.csv           100%[===================&gt;]   1.56K  --.-KB/s    in 0s
+
+2023-10-02 19:58:09 (31.7 MB/s) - ‘phase.csv’ saved [1596/1596]
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># dataset loader</span>
+<span class="n">load_dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="n">batch_size</span> <span class="o">=</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">system_size</span> <span class="o">=</span> <span class="n">sys_size</span><span class="p">,</span> <span class="n">datapath</span> <span class="o">=</span> <span class="s2">&quot;./data&quot;</span><span class="p">)</span>
+<span class="n">train_dataloader</span><span class="p">,</span> <span class="n">val_dataloader</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="o">.</span><span class="n">MNIST</span><span class="p">()</span>
+<span class="c1">#train_dataloader, val_dataloader = load_dataset.FMNIST()</span>
+
+<span class="c1"># model construction</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">DiffractiveClassifier_Codesign</span><span class="p">(</span><span class="n">num_layers</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span> <span class="n">batch_norm</span> <span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+                        <span class="c1">#det_y_loc = [105, 125, 145, 95, 115, 135, 155, 105, 125, 145], #det_y_loc = [175,195,215,165,185,205,225,175,195,215],</span>
+                        <span class="c1">#det_x_loc = [105, 105, 105, 125, 125, 125, 125, 145, 145, 145], #, det_x_loc = [175,175,175,195,195,195,195,215,215,215],</span>
+                        <span class="c1">#det_size = 10,</span>
+                        <span class="n">det_x_loc</span> <span class="o">=</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">140</span><span class="p">],</span>
+                        <span class="n">det_y_loc</span> <span class="o">=</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">70</span><span class="p">,</span> <span class="mi">110</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">140</span><span class="p">],</span>
+                        <span class="n">det_size</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="n">precision</span><span class="p">,</span> <span class="n">phase_func</span><span class="o">=</span><span class="n">phase_function</span><span class="p">,</span> <span class="n">intensity_func</span><span class="o">=</span><span class="n">intensity_function</span><span class="p">,</span>
+                        <span class="n">wavelength</span><span class="o">=</span><span class="mf">15.5e-7</span><span class="p">,</span> <span class="n">pixel_size</span> <span class="o">=</span> <span class="n">pixel_size</span><span class="p">,</span> <span class="n">sys_size</span><span class="o">=</span><span class="n">sys_size</span><span class="p">,</span> <span class="n">pad</span> <span class="o">=</span> <span class="n">pad</span><span class="p">,</span>
+                        <span class="n">distance</span><span class="o">=</span><span class="n">distance</span><span class="p">,</span><span class="n">amp_factor</span><span class="o">=</span><span class="n">amp_factor</span><span class="p">,</span> <span class="n">approx</span><span class="o">=</span><span class="n">approx</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="c1"># mode training</span>
+<span class="n">train</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">train_dataloader</span><span class="p">,</span> <span class="n">val_dataloader</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">lr</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">torch</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="n">data</span><span class="o">/</span><span class="n">dataloader</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">560</span><span class="p">:</span> <span class="ne">UserWarning</span><span class="p">:</span> <span class="n">This</span> <span class="n">DataLoader</span> <span class="n">will</span> <span class="n">create</span> <span class="mi">8</span> <span class="n">worker</span> <span class="n">processes</span> <span class="ow">in</span> <span class="n">total</span><span class="o">.</span> <span class="n">Our</span> <span class="n">suggested</span> <span class="nb">max</span> <span class="n">number</span> <span class="n">of</span> <span class="n">worker</span> <span class="ow">in</span> <span class="n">current</span> <span class="n">system</span> <span class="ow">is</span> <span class="mi">2</span><span class="p">,</span> <span class="n">which</span> <span class="ow">is</span> <span class="n">smaller</span> <span class="n">than</span> <span class="n">what</span> <span class="n">this</span> <span class="n">DataLoader</span> <span class="ow">is</span> <span class="n">going</span> <span class="n">to</span> <span class="n">create</span><span class="o">.</span> <span class="n">Please</span> <span class="n">be</span> <span class="n">aware</span> <span class="n">that</span> <span class="n">excessive</span> <span class="n">worker</span> <span class="n">creation</span> <span class="n">might</span> <span class="n">get</span> <span class="n">DataLoader</span> <span class="n">running</span> <span class="n">slow</span> <span class="ow">or</span> <span class="n">even</span> <span class="n">freeze</span><span class="p">,</span> <span class="n">lower</span> <span class="n">the</span> <span class="n">worker</span> <span class="n">number</span> <span class="n">to</span> <span class="n">avoid</span> <span class="n">potential</span> <span class="n">slowness</span><span class="o">/</span><span class="n">freeze</span> <span class="k">if</span> <span class="n">necessary</span><span class="o">.</span>
+  <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">_create_warning_msg</span><span class="p">(</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">lightridge</span><span class="o">/</span><span class="n">layers</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">314</span><span class="p">:</span> <span class="ne">UserWarning</span><span class="p">:</span> <span class="n">Creating</span> <span class="n">a</span> <span class="n">tensor</span> <span class="kn">from</span> <span class="nn">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarrays</span> <span class="ow">is</span> <span class="n">extremely</span> <span class="n">slow</span><span class="o">.</span> <span class="n">Please</span> <span class="n">consider</span> <span class="n">converting</span> <span class="n">the</span> <span class="nb">list</span> <span class="n">to</span> <span class="n">a</span> <span class="n">single</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span> <span class="k">with</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">()</span> <span class="n">before</span> <span class="n">converting</span> <span class="n">to</span> <span class="n">a</span> <span class="n">tensor</span><span class="o">.</span> <span class="p">(</span><span class="n">Triggered</span> <span class="n">internally</span> <span class="n">at</span> <span class="o">../</span><span class="n">torch</span><span class="o">/</span><span class="n">csrc</span><span class="o">/</span><span class="n">utils</span><span class="o">/</span><span class="n">tensor_new</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mf">245.</span><span class="p">)</span>
+  <span class="n">return_in_outK</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">complex</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">return_in_outK</span><span class="o">.</span><span class="n">real</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">)]),</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">return_in_outK</span><span class="o">.</span><span class="n">imag</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">)]))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">torch</span><span class="o">.</span><span class="n">complex64</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">complex64</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">complex64</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">complex64</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">complex64</span>
+<span class="n">torch</span><span class="o">.</span><span class="n">complex64</span>
+<span class="n">training</span> <span class="n">starts</span><span class="o">.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Epoch 0/3 : Training: 100%|████████████████████████████████████████████████| 600/600 [32:29&lt;00:00,  3.25s/it, Train_Loss=0.55, Train_Accuracy=0.62268]
+Validating: 100%|█████████| 100/100 [03:52&lt;00:00,  2.32s/it, Val_Loss=0.15074, Val_Accuarcy=0.90020]
+Epoch 1/3 : Training: 100%|████████████████████████████████████████████████| 600/600 [32:21&lt;00:00,  3.24s/it, Train_Loss=0.13, Train_Accuracy=0.91645]
+Validating: 100%|█████████| 100/100 [03:51&lt;00:00,  2.32s/it, Val_Loss=0.10463, Val_Accuarcy=0.93270]
+Epoch 2/3 : Training:  44%|█████████████████████▎                          | 266/600 [14:27&lt;18:11,  3.27s/it, Train_Loss=0.10, Train_Accuracy=0.93714]
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualization for phase modulation</span>
+<span class="n">model</span><span class="o">.</span><span class="n">phase_view</span><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;hsv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualization for propagation</span>
+<span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">((</span><span class="n">sys_size</span><span class="p">),</span><span class="n">interpolation</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">()])</span>
+<span class="n">val_dataset</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">MNIST</span><span class="p">(</span><span class="s2">&quot;./data/&quot;</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+  <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+  <span class="n">val_img</span><span class="p">,</span> <span class="n">val_label</span> <span class="o">=</span><span class="n">val_dataset</span><span class="p">[</span><span class="mi">900</span><span class="p">]</span>
+  <span class="n">model</span><span class="o">.</span><span class="n">prop_view</span><span class="p">(</span><span class="n">val_img</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lightridge.data.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">LightRidge Python API (lr.data) TBD</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note-this-colab-code-is-tested-with-free-colab-runtime-for-simple-artifact-evaluation-asplos-24-for-better-runtime-please-use-your-own-gpu-server">NOTE: This colab code is tested with free colab runtime for simple Artifact Evaluation (ASPLOS’24) . For better runtime, please use your own GPU server.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-lightridge-installation">Step 1: LightRidge installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-check-lightridge-installation">Step 2: Check LightRidge installation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-details">GPU Details</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-load-additional-packages-and-configure-your-training-device">Step 3: Load additional packages and configure your training device</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-constructing-donns">Step 4: Constructing DONNs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-training-donns">Step 5: Training DONNs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-visualizations">Step 6: Visualizations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step7-change-the-donn-model-with-codesign-information">Step7: Change the DONN model with codesign information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8-add-the-device-parameters">Step 8: Add the device parameters.</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div class="tocsection sourcelink">
+    <a href="_sources/lightridge_tutorial_ASPLOS23_AE.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

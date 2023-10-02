@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -19,28 +18,29 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_size.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_size.css?v=3b072d6b" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
+    <script src="_static/jquery.js?v=5d32c60e"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="_static/documentation_options.js?v=79d558ae"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lightridge.layers';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -56,6 +56,15 @@
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -96,7 +105,8 @@
     <span class="fa-solid fa-bars"></span>
   </label>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
   
@@ -112,7 +122,6 @@
 </a></div>
     
   </div>
-  
   
   <div class="col-lg-9 navbar-header-items">
     
@@ -154,6 +163,13 @@
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="lightridge_tutorial_ASPLOS23_AE.html">
+                        Welcome to LightRidge — An Open-Source Hardware Project for Optical AI
+                      </a>
+                    </li>
+                
   </ul>
 </nav></div>
       
@@ -164,23 +180,25 @@
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
         <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -191,18 +209,20 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
       <span class="fa-solid fa-outdent"></span>
     </label>
   
@@ -258,6 +278,13 @@ document.write(`
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="lightridge_tutorial_ASPLOS23_AE.html">
+                        Welcome to LightRidge — An Open-Source Hardware Project for Optical AI
+                      </a>
+                    </li>
+                
   </ul>
 </nav></div>
         
@@ -270,10 +297,10 @@ document.write(`
           <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -334,8 +361,8 @@ document.write(`
 
 
 
-<nav aria-label="Breadcrumbs">
-  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
       <a href="index.html" class="nav-link" aria-label="Home">
@@ -345,7 +372,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="pythonapi.html" class="nav-link">LightRidge API</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">LightRidge Python API (lr.layers)</li>
+    <li class="breadcrumb-item active" aria-current="page">LightRidge...</li>
   </ul>
 </nav>
 </div>
@@ -363,11 +390,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="lightridge-python-api-lr-layers">
-<h1>LightRidge Python API (lr.layers)<a class="headerlink" href="#lightridge-python-api-lr-layers" title="Permalink to this heading">#</a></h1>
+<h1>LightRidge Python API (lr.layers)<a class="headerlink" href="#lightridge-python-api-lr-layers" title="Link to this heading">#</a></h1>
 <div class="toctree-wrapper compound">
 </div>
 <section id="lightridge-layers">
-<h2>lightridge.layers<a class="headerlink" href="#lightridge-layers" title="Permalink to this heading">#</a></h2>
+<h2>lightridge.layers<a class="headerlink" href="#lightridge-layers" title="Link to this heading">#</a></h2>
 <p><strong>Author</strong>: Cunxi Yu (<a class="reference external" href="mailto:ycunxi&#37;&#52;&#48;github">ycunxi<span>&#64;</span>github</a>)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lightridge</span> <span class="k">as</span> <span class="nn">lr</span>
 </pre></div>
@@ -377,7 +404,7 @@ document.write(`
 <p>Click <span class="xref std std-ref">here</span> to download the full example code</p>
 </div>
 <section id="lr-detector-torch-nn-module">
-<h3><code class="docutils literal notranslate"><span class="pre">lr.Detector(torch.nn.Module):</span></code><a class="headerlink" href="#lr-detector-torch-nn-module" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">lr.Detector(torch.nn.Module):</span></code><a class="headerlink" href="#lr-detector-torch-nn-module" title="Link to this heading">#</a></h3>
 <p>This API returns a prefixed detector implementation of detector plane for multi-task classification</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Detector</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot;Implementation of detector plane for multi-task classification</span>
@@ -401,7 +428,7 @@ document.write(`
 </div>
 </section>
 <section id="lr-detector-10-torch-nn-module">
-<h3><code class="docutils literal notranslate"><span class="pre">lr.Detector_10(torch.nn.Module):</span></code><a class="headerlink" href="#lr-detector-10-torch-nn-module" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">lr.Detector_10(torch.nn.Module):</span></code><a class="headerlink" href="#lr-detector-10-torch-nn-module" title="Link to this heading">#</a></h3>
 <p>This API returns a prefixed detector implementation of detector plane for multi-task classification</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Detector</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot;Implementation of detector plane for multi-task classification</span>
@@ -425,7 +452,7 @@ document.write(`
 </div>
 </section>
 <section id="lr-diffractivelayer-torch-nn-module">
-<h3><code class="docutils literal notranslate"><span class="pre">lr.DiffractiveLayer(torch.nn.Module):</span></code><a class="headerlink" href="#lr-diffractivelayer-torch-nn-module" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">lr.DiffractiveLayer(torch.nn.Module):</span></code><a class="headerlink" href="#lr-diffractivelayer-torch-nn-module" title="Link to this heading">#</a></h3>
 <p>This API supports diffractive layer that enables device-quantization aware training using Gumble-Softmax</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DiffractiveLayer</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot; Implementation of diffractive layer that enables device-quantization aware training using Gumble-Softmax</span>
@@ -450,7 +477,7 @@ document.write(`
 </div>
 </section>
 <section id="lr-diffraction-torch-nn-module">
-<h3><code class="docutils literal notranslate"><span class="pre">lr.Diffraction(torch.nn.Module):</span></code><a class="headerlink" href="#lr-diffraction-torch-nn-module" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">lr.Diffraction(torch.nn.Module):</span></code><a class="headerlink" href="#lr-diffraction-torch-nn-module" title="Link to this heading">#</a></h3>
 <p>Implementation of diffraction</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Diffraction</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
 <span class="sd">&quot;&quot;&quot; Implementation of diffraction</span>
@@ -470,7 +497,7 @@ document.write(`
 </div>
 </section>
 <section id="lr-diffractivelayerraw-torch-nn-module">
-<h3><code class="docutils literal notranslate"><span class="pre">lr.DiffractiveLayerRaw(torch.nn.Module):</span></code><a class="headerlink" href="#lr-diffractivelayerraw-torch-nn-module" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">lr.DiffractiveLayerRaw(torch.nn.Module):</span></code><a class="headerlink" href="#lr-diffractivelayerraw-torch-nn-module" title="Link to this heading">#</a></h3>
 <p>This API supports diffractive layer that with phase and amplitude are not limited to specific hardware. Phase and
 amplitude has full range [0,2pi], [0,1], respectively (float32).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DiffractiveLayerRaw</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
@@ -493,10 +520,10 @@ amplitude has full range [0,2pi], [0,1], respectively (float32).</p>
 </div>
 </section>
 <section id="lr-diffractivelayerraw-reflect-torch-nn-module">
-<h3><code class="docutils literal notranslate"><span class="pre">lr.DiffractiveLayerRaw_Reflect(torch.nn.Module):</span></code><a class="headerlink" href="#lr-diffractivelayerraw-reflect-torch-nn-module" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">lr.DiffractiveLayerRaw_Reflect(torch.nn.Module):</span></code><a class="headerlink" href="#lr-diffractivelayerraw-reflect-torch-nn-module" title="Link to this heading">#</a></h3>
 <p>This API implements diffractive layer, in which the phase and amplitude are not limited to specific hardware (float32 precision), with reflection considered.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">DiffractiveLayerRaw_Reflect</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Implementation of diffractive layer without hardware constraints</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Implementation of diffractive layer without hardware constraints</span>
 <span class="sd">    Args:</span>
 <span class="sd">        wavelength: the wavelength of your laser source</span>
 <span class="sd">        pixel-size: the size of pixels in your diffractive layers</span>
@@ -522,11 +549,10 @@ amplitude has full range [0,2pi], [0,1], respectively (float32).</p>
               
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="pythonapi.html"
@@ -546,10 +572,7 @@ amplitude has full range [0,2pi], [0,1], respectively (float32).</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -597,8 +620,8 @@ amplitude has full range [0,2pi], [0,1], respectively (float32).</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -616,7 +639,7 @@ amplitude has full range [0,2pi], [0,1], respectively (float32).</p>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     <br/>
   </p>
 </div>
@@ -624,10 +647,11 @@ amplitude has full range [0,2pi], [0,1], respectively (float32).</p>
     </div>
   
   
+  
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.1.
 </p></div>
       
     </div>
