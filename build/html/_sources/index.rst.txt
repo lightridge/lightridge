@@ -6,7 +6,7 @@
 Welcome to LightRidge — An Open-Source Hardware Project for Optical AI!
 ==================================================
 
-Contact: `Yingjie Li <https://lyj1201.github.io/yingjieli/>`_  (yingjie.li@utah.edu), `Cunxi Yu <http://ycunxi.github.io/cunxiyu/>`_ (cunxi.yu@utah.edu)
+Contact: `Yingjie Li <https://lyj1201.github.io/yingjieli/>`_  (yingjiel@umd.edu), `Cunxi Yu <http://ycunxi.github.io/cunxiyu/>`_ (cunxiyu@umd.edu)
 
 Getting Started
 ---------------
