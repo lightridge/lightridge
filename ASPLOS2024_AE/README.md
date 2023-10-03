@@ -2,6 +2,7 @@
 
 The following tutorial is a LightRidge tutorial of building a basic diffractive optical neural networks (DONNs)
 
+Colab access: https://drive.google.com/file/d/1DVzvvei0GBXX_jZewNtusR7xLCA-TwDM/view?usp=sharing
 ### NOTE: <font color='red'>This colab code is tested with free colab runtime for simple Artifact Evaluation (ASPLOS'24) </font>. For better runtime, please use your own GPU server.
 
 
