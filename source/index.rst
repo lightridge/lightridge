@@ -18,7 +18,7 @@ Getting Started
    samples
    tutorials
    pythonapi
-   lightridge_tutorial_ASPLOS23_AE 
+   lightridge_tutorial_ASPLOS24_AE 
  
 
 
