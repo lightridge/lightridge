@@ -5,7 +5,7 @@ v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/li
 # Welcome to LightRidge — An Open-Source Hardware Project for Optical AI!
 [**Documentation**](https://lightridge.github.io/lightridge/index.html#) 
 
-[!image](https://lightridge.github.io/lightridge/_images/lightridge_flow.png)
+![image](https://lightridge.github.io/lightridge/_images/lightridge_flow.png)
 
 LightRidge is an open-source framework for end-to-end optical machine learning (ML) 
 compilation, which connects physics to system. It is specifically designed for 
