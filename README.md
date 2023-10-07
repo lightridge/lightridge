@@ -5,6 +5,8 @@ v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/li
 # Welcome to LightRidge — An Open-Source Hardware Project for Optical AI!
 [**Documentation**](https://lightridge.github.io/lightridge/index.html#) 
 
+[!imag](https://lightridge.github.io/lightridge/_images/lightridge_flow.png)
+
 LightRidge is an open-source framework for end-to-end optical machine learning (ML) 
 compilation, which connects physics to system. It is specifically designed for 
 diffractive optical computing, offering a comprehensive set of features:
@@ -50,11 +52,10 @@ released soon.
 import lightridge
 
 # define your DONNs model
+```bash
 class DiffractiveClassifier_Raw(torch.nn.Module):
-    def __init__(self, device, det_x_loc, det_y_loc, det_size, wavelength=5.32e-7, 
-pixel_size=0.000036,
-                 batch_norm=False, sys_size = 200, pad = 100, distance=0.1, 
-num_layers=2, amp_factor=6, approx="Fresnel3"):
+    def __init__(self, device, det_x_loc, det_y_loc, det_size, wavelength=5.32e-7, pixel_size=0.000036,
+                 batch_norm=False, sys_size = 200, pad = 100, distance=0.1, num_layers=2, amp_factor=6, approx="Fresnel3"):
         super(DiffractiveClassifier_Raw, self).__init__()
         self.amp_factor = amp_factor
         self.size = sys_size
@@ -63,23 +64,14 @@ num_layers=2, amp_factor=6, approx="Fresnel3"):
         self.pixel_size = pixel_size
         self.pad = pad
         self.approx=approx
-        self.diffractive_layers = 
-torch.nn.ModuleList([layers.DiffractLayer_Raw(wavelength=self.wavelength, 
-pixel_size=self.pixel_size,
-                                                                                    
-size=self.size, pad = self.pad, distance=self.distance,
-                                                                                    
-amplitude_factor = amp_factor, approx=self.approx,
-                                                                                    
-phase_mod=True) for _ in range(num_layers)])
-        self.last_diffraction = layers.DiffractLayer_Raw(wavelength=self.wavelength, 
-pixel_size=self.pixel_size,
-                                                            size=self.size, pad = 
-self.pad, distance=self.distance,
-                                                            approx=self.approx, 
-phase_mod=False)
-        self.detector = layers.Detector(x_loc=det_x_loc, y_loc=det_y_loc, 
-det_size=det_size, size=self.size)
+        self.diffractive_layers = torch.nn.ModuleList([layers.DiffractLayer_Raw(wavelength=self.wavelength, pixel_size=self.pixel_size,
+                                                                                    size=self.size, pad = self.pad, distance=self.distance,
+                                                                                    amplitude_factor = amp_factor, approx=self.approx,
+                                                                                    phase_mod=True) for _ in range(num_layers)])
+        self.last_diffraction = layers.DiffractLayer_Raw(wavelength=self.wavelength, pixel_size=self.pixel_size,
+                                                            size=self.size, pad = self.pad, distance=self.distance,
+                                                            approx=self.approx, phase_mod=False)
+        self.detector = layers.Detector(x_loc=det_x_loc, y_loc=det_y_loc, det_size=det_size, size=self.size)
 
     def forward(self, x):
         for index, layer in enumerate(self.diffractive_layers):
@@ -87,7 +79,6 @@ det_size=det_size, size=self.size)
         x = self.last_diffraction(x)
         output = self.detector(x)
         return output
-
     def prop_view(self, x):
         prop_list = []
         prop_list.append(x)
@@ -99,18 +90,16 @@ det_size=det_size, size=self.size)
         prop_list.append(x)
         for i in range(x.shape[0]):
             print(i)
-            utils.forward_func_visualization(prop_list, self.size, fname="mnist_%s.pdf" 
-% i, idx=i, intensity_plot=False)
+            utils.forward_func_visualization(prop_list, self.size, fname="mnist_%s.pdf" % i, idx=i, intensity_plot=False)
         output = self.detector(x)
         return
 
-    def phase_view(self, cmap="hsv"):
+    def phase_view(self,x, cmap="hsv"):
         phase_list = []
         for index, layer in enumerate(self.diffractive_layers):
-            phase_list.append(layer.phase)
+            phase_list.append(self.phase)
         print(phase_list[0].shape)
-        utils.phase_visualization(phase_list,size=self.size, cmap=cmap, 
-fname="prop_view_reflection.pdf")
+        utils.phase_visualization(phase_list,size=self.size, cmap="gray", fname="prop_view_reflection.pdf")
         return
 ```
 
