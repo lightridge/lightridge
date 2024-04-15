@@ -18,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -32,19 +32,19 @@
     <link rel="stylesheet" type="text/css" href="_static/css/sphinx_rtd_size.css?v=3b072d6b" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
     <script src="_static/jquery.js?v=5d32c60e"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-    <script src="_static/documentation_options.js?v=1c17f339"></script>
+    <script src="_static/documentation_options.js?v=000c92bf"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'installation';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="LightRidge Sample" href="samples.html" />
+    <link rel="next" title="LightRidge Example" href="lightridge_tutorial_ASPLOS24_AE.html" />
     <link rel="prev" title="Welcome to LightRidge — An Open-Source Hardware Project for Optical AI!" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -117,6 +117,7 @@
   
   
   
+  
     <p class="title logo__title">LightRidge 0.2.2 documentation</p>
   
 </a></div>
@@ -144,8 +145,8 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="samples.html">
-                        LightRidge Sample
+                      <a class="nav-link nav-internal" href="lightridge_tutorial_ASPLOS24_AE.html">
+                        LightRidge Example
                       </a>
                     </li>
                 
@@ -158,15 +159,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="pythonapi.html">
-                        LightRidge API
+                      <a class="nav-link nav-internal" href="colab.html">
+                        LightRidge @ Google Colab
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="lightridge_tutorial_ASPLOS24_AE.html">
-                        LightRidge ASPLOS 24 AE
+                      <a class="nav-link nav-internal" href="pythonapi.html">
+                        LightRidge API
                       </a>
                     </li>
                 
@@ -259,8 +260,8 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="samples.html">
-                        LightRidge Sample
+                      <a class="nav-link nav-internal" href="lightridge_tutorial_ASPLOS24_AE.html">
+                        LightRidge Example
                       </a>
                     </li>
                 
@@ -273,15 +274,15 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="pythonapi.html">
-                        LightRidge API
+                      <a class="nav-link nav-internal" href="colab.html">
+                        LightRidge @ Google Colab
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="lightridge_tutorial_ASPLOS24_AE.html">
-                        LightRidge ASPLOS 24 AE
+                      <a class="nav-link nav-internal" href="pythonapi.html">
+                        LightRidge API
                       </a>
                     </li>
                 
@@ -364,9 +365,13 @@ document.write(`
 </div>
 <p>Install the package with pip:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip uninstall lightridge
-$ pip install lightridge (to be released)
+$ pip install lightridge
 </pre></div>
 </div>
+<section id="testing-example">
+<h2>Testing Example<a class="headerlink" href="#testing-example" title="Link to this heading">#</a></h2>
+<p>You can test the package with this example in Google Colab. Click <a class="reference external" href="https://drive.google.com/file/d/1DVzvvei0GBXX_jZewNtusR7xLCA-TwDM/view?usp=sharing">here</a> to open the example.</p>
+</section>
 </section>
 
 
@@ -389,11 +394,11 @@ $ pip install lightridge (to be released)
       </div>
     </a>
     <a class="right-next"
-       href="samples.html"
+       href="lightridge_tutorial_ASPLOS24_AE.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">LightRidge Sample</p>
+        <p class="prev-next-title">LightRidge Example</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -405,6 +410,16 @@ $ pip install lightridge (to be released)
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-example">Testing Example</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
   <div class="tocsection sourcelink">
@@ -427,8 +442,8 @@ $ pip install lightridge (to be released)
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -458,7 +473,7 @@ $ pip install lightridge (to be released)
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
 </p></div>
       
     </div>

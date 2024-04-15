@@ -1,10 +1,10 @@
-LightRidge ASPLOS 24 AE 
+LightRidge Example 
 ======================================================================
 
 The following tutorial is a LightRidge tutorial of building a basic
-diffractive optical neural networks (DONNs)
+diffractive optical neural networks (DONNs). You can test the package with this example in Google Colab. Click `here <https://drive.google.com/file/d/1DVzvvei0GBXX_jZewNtusR7xLCA-TwDM/view?usp=sharing>`__ to open the example.
 
-NOTE: This colab code is tested with free colab runtime for simple Artifact Evaluation (ASPLOS'24) . For better runtime, please use your own GPU server.
+NOTE: This colab code is tested with free Google Colab runtime for simple Artifact Evaluation (ASPLOS'24) . For better runtime, please use your own GPU server using ``pip install lightridge``.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: ipython3

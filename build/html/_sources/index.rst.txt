@@ -15,10 +15,10 @@ Getting Started
    :maxdepth: 1
 
    installation
-   samples
+   lightridge_tutorial_ASPLOS24_AE
    tutorials
+   colab 
    pythonapi
-   lightridge_tutorial_ASPLOS24_AE 
  
 
 

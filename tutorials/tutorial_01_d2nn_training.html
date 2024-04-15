@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -9,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Tutorial 01: Training Diffractive Neural Networks &#8212; LightRidge 0.1.6 documentation</title>
+    <title>Tutorial 01: Training Diffractive Neural Networks &#8212; LightRidge 0.2.2 documentation</title>
   
   
   
@@ -19,28 +18,29 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/sphinx_rtd_size.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/sphinx_rtd_size.css?v=3b072d6b" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=000c92bf"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/tutorial_01_d2nn_training';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -56,6 +56,15 @@
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -96,7 +105,8 @@
     <span class="fa-solid fa-bars"></span>
   </label>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
   
@@ -107,12 +117,12 @@
   
   
   
-    <p class="title logo__title">LightRidge 0.1.6 documentation</p>
+  
+    <p class="title logo__title">LightRidge 0.2.2 documentation</p>
   
 </a></div>
     
   </div>
-  
   
   <div class="col-lg-9 navbar-header-items">
     
@@ -154,6 +164,13 @@
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../lightridge_tutorial_ASPLOS24_AE.html">
+                        LightRidge ASPLOS 24 AE
+                      </a>
+                    </li>
+                
   </ul>
 </nav></div>
       
@@ -164,23 +181,25 @@
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
         <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -191,18 +210,20 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
       <span class="fa-solid fa-outdent"></span>
     </label>
   
@@ -258,6 +279,13 @@ document.write(`
                       </a>
                     </li>
                 
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../lightridge_tutorial_ASPLOS24_AE.html">
+                        LightRidge ASPLOS 24 AE
+                      </a>
+                    </li>
+                
   </ul>
 </nav></div>
         
@@ -270,10 +298,10 @@ document.write(`
           <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -323,8 +351,8 @@ document.write(`
 
 
 
-<nav aria-label="Breadcrumbs">
-  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
       <a href="../index.html" class="nav-link" aria-label="Home">
@@ -334,7 +362,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../tutorials.html" class="nav-link">LightRidge Case-studies</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Tutorial 01: Training Diffractive Neural Networks</li>
+    <li class="breadcrumb-item active" aria-current="page">Tutorial...</li>
   </ul>
 </nav>
 </div>
@@ -352,7 +380,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="tutorial-01-training-diffractive-neural-networks">
-<h1>Tutorial 01: Training Diffractive Neural Networks<a class="headerlink" href="#tutorial-01-training-diffractive-neural-networks" title="Permalink to this heading">#</a></h1>
+<h1>Tutorial 01: Training Diffractive Neural Networks<a class="headerlink" href="#tutorial-01-training-diffractive-neural-networks" title="Link to this heading">#</a></h1>
 <p>Tutorial Authors: Yingjie Li, Cunxi Yu (University of Utah)</p>
 <p>Recently, there are increasing efforts on optical neural networks and
 optical computing based DNNs hardware, which bring significant
@@ -374,20 +402,20 @@ and Cunxi Yu. “Real-time multi-task diffractive deep neural networks via
 hardware-software co-design.” Scientific reports 11, no. 1 (2021): 1-9.</em></p>
 <hr class="docutils" />
 <section id="d2nns-setups-definition-visible-range-laser-input">
-<h2>D2NNs setups definition (visible range laser input)<a class="headerlink" href="#d2nns-setups-definition-visible-range-laser-input" title="Permalink to this heading">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">wavelength</span> <span class="o">=</span> laser wavelenght <span class="o">(</span>unit: meter<span class="o">)</span>
-<span class="nv">pixel_size</span> <span class="o">=</span> pixel size of phase mask <span class="o">(</span>unit: meter<span class="o">)</span>
-<span class="nv">distance</span> <span class="o">=</span> diffraction distance <span class="o">(</span>unit: meter<span class="o">)</span>
-<span class="nv">depth</span> <span class="o">=</span> number of layers <span class="o">(</span>default: <span class="m">5</span> layers <span class="o">[</span><span class="m">1</span><span class="o">])</span>
+<h2>D2NNs setups definition (visible range laser input)<a class="headerlink" href="#d2nns-setups-definition-visible-range-laser-input" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">wavelength</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>laser<span class="w"> </span>wavelenght<span class="w"> </span><span class="o">(</span>unit:<span class="w"> </span>meter<span class="o">)</span>
+<span class="nv">pixel_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>pixel<span class="w"> </span>size<span class="w"> </span>of<span class="w"> </span>phase<span class="w"> </span>mask<span class="w"> </span><span class="o">(</span>unit:<span class="w"> </span>meter<span class="o">)</span>
+<span class="nv">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>diffraction<span class="w"> </span>distance<span class="w"> </span><span class="o">(</span>unit:<span class="w"> </span>meter<span class="o">)</span>
+<span class="nv">depth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>layers<span class="w"> </span><span class="o">(</span>default:<span class="w"> </span><span class="m">5</span><span class="w"> </span>layers<span class="w"> </span><span class="o">[</span><span class="m">1</span><span class="o">])</span>
 </pre></div>
 </div>
 </section>
 <section id="d2nns-setups-training">
-<h2>D2NNs setups training<a class="headerlink" href="#d2nns-setups-training" title="Permalink to this heading">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">batch_size</span> <span class="o">=</span> batch size <span class="o">(</span><span class="m">500</span><span class="o">)</span>
-<span class="nv">lr</span> <span class="o">=</span> learning rate <span class="o">(</span><span class="m">0</span>.1<span class="o">)</span>
-<span class="nv">epochs</span> <span class="o">=</span> number of training iterations <span class="o">(</span><span class="m">5</span><span class="o">)</span>
-<span class="nv">amp_factor</span> <span class="o">=</span> regularization factor <span class="o">(</span><span class="m">2</span><span class="o">)</span>
+<h2>D2NNs setups training<a class="headerlink" href="#d2nns-setups-training" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">batch_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>batch<span class="w"> </span>size<span class="w"> </span><span class="o">(</span><span class="m">500</span><span class="o">)</span>
+<span class="nv">lr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>learning<span class="w"> </span>rate<span class="w"> </span><span class="o">(</span><span class="m">0</span>.1<span class="o">)</span>
+<span class="nv">epochs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>number<span class="w"> </span>of<span class="w"> </span>training<span class="w"> </span>iterations<span class="w"> </span><span class="o">(</span><span class="m">5</span><span class="o">)</span>
+<span class="nv">amp_factor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>regularization<span class="w"> </span>factor<span class="w"> </span><span class="o">(</span><span class="m">2</span><span class="o">)</span>
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -424,7 +452,7 @@ hardware-software co-design.” Scientific reports 11, no. 1 (2021): 1-9.</em></
 </div>
 </section>
 <section id="loading-lightridge-package">
-<h2>Loading LightRidge Package<a class="headerlink" href="#loading-lightridge-package" title="Permalink to this heading">#</a></h2>
+<h2>Loading LightRidge Package<a class="headerlink" href="#loading-lightridge-package" title="Link to this heading">#</a></h2>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lightbridge.data</span> <span class="k">as</span> <span class="nn">dataset</span>
 <span class="kn">import</span> <span class="nn">lightbridge.layers</span> <span class="k">as</span> <span class="nn">layers</span>
 <span class="kn">import</span> <span class="nn">lightbridge.utils</span> <span class="k">as</span> <span class="nn">utils</span>
@@ -545,14 +573,14 @@ Validating: 100%|████████████████| 20/20 [00:02&
 </div>
 </section>
 <section id="visualize-post-training-phase-parameters-weights-of-d2nns-using-lightridge">
-<h2>Visualize Post-training Phase Parameters (weights of D2NNs) using LightRidge<a class="headerlink" href="#visualize-post-training-phase-parameters-weights-of-d2nns-using-lightridge" title="Permalink to this heading">#</a></h2>
+<h2>Visualize Post-training Phase Parameters (weights of D2NNs) using LightRidge<a class="headerlink" href="#visualize-post-training-phase-parameters-weights-of-d2nns-using-lightridge" title="Link to this heading">#</a></h2>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">phase_view</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
 <img alt="../_images/tutorial_01_d2nn_training_13_0.png" src="../_images/tutorial_01_d2nn_training_13_0.png" />
 </section>
 <section id="visualize-inference-forward-of-d2nns-using-lightridge">
-<h2>Visualize Inference (Forward) of D2NNs using LightRidge<a class="headerlink" href="#visualize-inference-forward-of-d2nns-using-lightridge" title="Permalink to this heading">#</a></h2>
+<h2>Visualize Inference (Forward) of D2NNs using LightRidge<a class="headerlink" href="#visualize-inference-forward-of-d2nns-using-lightridge" title="Link to this heading">#</a></h2>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">load_dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">system_size</span> <span class="o">=</span> <span class="n">sys_size</span><span class="p">,</span> <span class="n">datapath</span> <span class="o">=</span> <span class="s2">&quot;./data&quot;</span><span class="p">)</span>
 <span class="n">train_dataloader</span><span class="p">,</span> <span class="n">val_dataloader</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="o">.</span><span class="n">MNIST</span><span class="p">()</span>
 <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
@@ -576,11 +604,10 @@ Validating: 100%|████████████████| 20/20 [00:02&
               
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../tutorials.html"
@@ -600,10 +627,7 @@ Validating: 100%|████████████████| 20/20 [00:02&
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -647,8 +671,8 @@ Validating: 100%|████████████████| 20/20 [00:02&
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -666,7 +690,7 @@ Validating: 100%|████████████████| 20/20 [00:02&
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     <br/>
   </p>
 </div>
@@ -674,10 +698,11 @@ Validating: 100%|████████████████| 20/20 [00:02&
     </div>
   
   
+  
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
 </p></div>
       
     </div>

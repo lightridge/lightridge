@@ -1,4 +1,4 @@
-LightRidge Sample
+LightRidge Example
 --------------------------------------------------------------------------------------
 
 Tutorial Authors: Yingjie Li, Cunxi Yu (University of Utah)

@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -9,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Case-study 1 &#8212; LightRidge 0.1.6 documentation</title>
+    <title>Case-study 1 &#8212; LightRidge 0.2.2 documentation</title>
   
   
   
@@ -19,28 +18,29 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/sphinx_rtd_size.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/sphinx_rtd_size.css?v=3b072d6b" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+    <script src="../_static/documentation_options.js?v=000c92bf"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorials/tutorial_01';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -54,6 +54,15 @@
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -94,7 +103,8 @@
     <span class="fa-solid fa-bars"></span>
   </label>
   
-  <div class="navbar-header-items__start">
+  
+  <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
   
@@ -105,12 +115,12 @@
   
   
   
-    <p class="title logo__title">LightRidge 0.1.6 documentation</p>
+  
+    <p class="title logo__title">LightRidge 0.2.2 documentation</p>
   
 </a></div>
     
   </div>
-  
   
   <div class="col-lg-9 navbar-header-items">
     
@@ -133,8 +143,8 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../samples.html">
-                        LightRidge Sample
+                      <a class="nav-link nav-internal" href="../lightridge_tutorial_ASPLOS24_AE.html">
+                        LightRidge Example
                       </a>
                     </li>
                 
@@ -142,6 +152,13 @@
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../tutorials.html">
                         LightRidge Case-studies
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../colab.html">
+                        LightRidge @ Google Colab
                       </a>
                     </li>
                 
@@ -162,23 +179,25 @@
       
         <div class="navbar-item navbar-persistent--container">
           
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
         </div>
       
       
         <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -189,18 +208,20 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
     </div>
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
       <span class="fa-solid fa-outdent"></span>
     </label>
   
@@ -237,8 +258,8 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../samples.html">
-                        LightRidge Sample
+                      <a class="nav-link nav-internal" href="../lightridge_tutorial_ASPLOS24_AE.html">
+                        LightRidge Example
                       </a>
                     </li>
                 
@@ -246,6 +267,13 @@ document.write(`
                     <li class="nav-item">
                       <a class="nav-link nav-internal" href="../tutorials.html">
                         LightRidge Case-studies
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../colab.html">
+                        LightRidge @ Google Colab
                       </a>
                     </li>
                 
@@ -268,10 +296,10 @@ document.write(`
           <div class="navbar-item">
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script></div>
@@ -304,8 +332,8 @@ document.write(`
 
 
 
-<nav aria-label="Breadcrumbs">
-  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
     
     <li class="breadcrumb-item breadcrumb-home">
       <a href="../index.html" class="nav-link" aria-label="Home">
@@ -332,9 +360,9 @@ document.write(`
   <div class="toctree-wrapper compound">
 </div>
 <section id="case-study-1">
-<h1>Case-study 1<a class="headerlink" href="#case-study-1" title="Permalink to this heading">#</a></h1>
+<h1>Case-study 1<a class="headerlink" href="#case-study-1" title="Link to this heading">#</a></h1>
 <section id="device-to-system-co-design-using-spatial-light-modulator-visible">
-<h2>Device-to-System Co-design using Spatial Light Modulator (Visible)<a class="headerlink" href="#device-to-system-co-design-using-spatial-light-modulator-visible" title="Permalink to this heading">#</a></h2>
+<h2>Device-to-System Co-design using Spatial Light Modulator (Visible)<a class="headerlink" href="#device-to-system-co-design-using-spatial-light-modulator-visible" title="Link to this heading">#</a></h2>
 <p><strong>Author</strong>: Yingjie Li (<a class="reference external" href="mailto:lyj1201&#37;&#52;&#48;github">lyj1201<span>&#64;</span>github</a>)</p>
 <p>In this case study, we will show the potential of our system to make hardware-software codesign. To make the system more practical to setup, we need to consider the information of hardware used in the system in simulation, i.e., <strong>hardware-software codesign</strong>. In our system, we will have laser source, diffractive layers (with phase modulation) and detectors. For laser source, there can be different modes; for diffractive layers, it can have different optical properties due to its materials and fabrication; for detectors, it can have different noise levels. We will make our simulation see these limitations from hardware to get better guidance for our experiments.</p>
 <p>For the first thing, we consider the limitations from diffractive layers. The <strong>Spatial Light Modulator (SLM)</strong>. The SLM is an array of liquid crystals, each liquid crystal is a pixel, and acts as a phase modulator in our system. By applying different voltage levels (0 to 255) to each pixel in the SLM array, the free-space light going through the pixel will be phase-modulated accordingly. Moreover, the intensity of the light after going through the pixel can be different with the change of the applied voltage. Thus, the function of voltage vs phase and voltage vs intensity should be included in our simulation. The SLM we used in our experiments is shown below.</p>
@@ -465,8 +493,8 @@ document.write(`
 </div>
 <p class="sphx-glr-script-out"><strong>Simple training results</strong>
 setups: learning rate = 0.7, amplitude_factor=50, epochs=20, dataset=MNIST-10)</p>
-<div class="sphx-glr-script-out highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">00</span>:11&lt;<span class="m">00</span>:00,  <span class="m">8</span>.50it/s, <span class="nv">Train_Loss</span><span class="o">=</span><span class="m">0</span>.06, <span class="nv">Train_Accuracy</span><span class="o">=</span><span class="m">0</span>.96553<span class="o">]</span>
-Epoch <span class="m">10</span>/20 : Validating: <span class="m">100</span>%<span class="p">|</span>█<span class="p">|</span> <span class="m">17</span>/17 <span class="o">[</span><span class="m">00</span>:02&lt;<span class="m">00</span>:00,  <span class="m">6</span>.94it/s, <span class="nv">Val_Loss</span><span class="o">=</span><span class="m">0</span>.07025, <span class="nv">Val_Accuarcy</span><span class="o">=</span><span class="m">0</span>.96<span class="o">]</span>
+<div class="sphx-glr-script-out highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span><span class="m">00</span>:11&lt;<span class="m">00</span>:00,<span class="w">  </span><span class="m">8</span>.50it/s,<span class="w"> </span><span class="nv">Train_Loss</span><span class="o">=</span><span class="m">0</span>.06,<span class="w"> </span><span class="nv">Train_Accuracy</span><span class="o">=</span><span class="m">0</span>.96553<span class="o">]</span>
+Epoch<span class="w"> </span><span class="m">10</span>/20<span class="w"> </span>:<span class="w"> </span>Validating:<span class="w"> </span><span class="m">100</span>%<span class="p">|</span>█<span class="p">|</span><span class="w"> </span><span class="m">17</span>/17<span class="w"> </span><span class="o">[</span><span class="m">00</span>:02&lt;<span class="m">00</span>:00,<span class="w">  </span><span class="m">6</span>.94it/s,<span class="w"> </span><span class="nv">Val_Loss</span><span class="o">=</span><span class="m">0</span>.07025,<span class="w"> </span><span class="nv">Val_Accuarcy</span><span class="o">=</span><span class="m">0</span>.96<span class="o">]</span>
 </pre></div>
 </div>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-d2nn-training-example1-py">
@@ -478,7 +506,7 @@ Epoch <span class="m">10</span>/20 : Validating: <span class="m">100</span>%<spa
 </div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># example of using code tutorial_02_codesign.py: training a 2-layer D2NN with SLM parameters defined in device_parameters/ folder</span>
-python tutorial_02_codesign.py --phase-file<span class="o">=</span>device_parameters/phase.csv  --intensity-file<span class="o">=</span>device_parameters/intensity.csv --lr<span class="o">=</span><span class="m">0</span>.7 --depth<span class="o">=</span><span class="m">2</span> --batch-size<span class="o">=</span><span class="m">600</span> --dataset<span class="o">=</span>mnist --distance<span class="o">=</span><span class="m">0</span>.6604 --sys-size<span class="o">=</span><span class="m">200</span> --amp-factor<span class="o">=</span><span class="m">50</span>
+python<span class="w"> </span>tutorial_02_codesign.py<span class="w"> </span>--phase-file<span class="o">=</span>device_parameters/phase.csv<span class="w">  </span>--intensity-file<span class="o">=</span>device_parameters/intensity.csv<span class="w"> </span>--lr<span class="o">=</span><span class="m">0</span>.7<span class="w"> </span>--depth<span class="o">=</span><span class="m">2</span><span class="w"> </span>--batch-size<span class="o">=</span><span class="m">600</span><span class="w"> </span>--dataset<span class="o">=</span>mnist<span class="w"> </span>--distance<span class="o">=</span><span class="m">0</span>.6604<span class="w"> </span>--sys-size<span class="o">=</span><span class="m">200</span><span class="w"> </span>--amp-factor<span class="o">=</span><span class="m">50</span>
 </pre></div>
 </div>
 </section>
@@ -489,16 +517,12 @@ python tutorial_02_codesign.py --phase-file<span class="o">=</span>device_parame
               
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -538,8 +562,8 @@ python tutorial_02_codesign.py --phase-file<span class="o">=</span>device_parame
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -557,7 +581,7 @@ python tutorial_02_codesign.py --phase-file<span class="o">=</span>device_parame
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     <br/>
   </p>
 </div>
@@ -565,10 +589,11 @@ python tutorial_02_codesign.py --phase-file<span class="o">=</span>device_parame
     </div>
   
   
+  
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.3.
 </p></div>
       
     </div>
